@@ -1,0 +1,226 @@
+{
+  "pagename": "BillingInformationPage",
+  "urlcontains": "billing_information",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-caption__title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillingInfoTabSelected",
+      "meta": {
+        "type": "li",
+        "id": "",
+        "xpath": "//span[text()='Billing Information']/parent::li[contains(@class,'is-selected')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoFirstName",
+      "meta": {
+        "type": "text",
+        "id": "first-name",
+        "xpath": "",
+        "className": "",
+        "css": "#first-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoLastName",
+      "meta": {
+        "type": "text",
+        "id": "last-name",
+        "xpath": "",
+        "className": "",
+        "css": "#last-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoContactPhone",
+      "meta": {
+        "type": "text",
+        "id": "phone",
+        "xpath": "",
+        "className": "",
+        "css": "#phone",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoEmail",
+      "meta": {
+        "type": "text",
+        "id": "email",
+        "xpath": "",
+        "className": "",
+        "css": "#email",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoEbillNotificationMethod",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-ebill-method-select+.ui-selectmenu-button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoEbillNotificationMethodLov",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "ul.ui-menu > li.ui-menu-item",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoMobileNumberSameAsContactNumberCheckbox",
+      "meta": {
+        "type": "label",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-checkbox.js-same-as-contact-phone",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoMobileNumber",
+      "meta": {
+        "type": "text",
+        "id": "mobilePhone",
+        "xpath": "",
+        "className": "",
+        "css": "#mobilePhone",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoAgentAdvisedCustomer",
+      "meta": {
+        "type": "label",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-agent-advised",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoSaveContact",
+      "meta": {
+        "type": "button",
+        "id": "shippingSaveContactButton",
+        "xpath": "",
+        "className": "",
+        "css": "#shippingSaveContactButton > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoCancelContact",
+      "meta": {
+        "type": "button",
+        "id": "shippingCancelContactButton",
+        "xpath": "",
+        "className": "",
+        "css": ".js-btn-cancel",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoCity",
+      "meta": {
+        "type": "text",
+        "id": "city",
+        "xpath": "",
+        "className": "",
+        "css": "#city",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoProvince",
+      "meta": {
+        "type": "span",
+        "id": "province-button",
+        "xpath": "",
+        "className": "",
+        "css": "#province-button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoAddress",
+      "meta": {
+        "type": "text",
+        "id": "address",
+        "xpath": "",
+        "className": "",
+        "css": "#address",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoPostalCode",
+      "meta": {
+        "type": "text",
+        "id": "postal-code",
+        "xpath": "",
+        "className": "",
+        "css": "#postal-code",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BillInfoValidateAddress",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".jsValidateAddress > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SubmitOrderButton",
+      "meta": {
+        "type": "button",
+        "id": "next",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "UseAboveAddressRadio",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[@class='wiz-radio__label' and contains(text(),'Use above')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

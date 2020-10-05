@@ -1,0 +1,168 @@
+{
+  "locations": {
+    "or": {
+      "base": "/or/agent-portal-pure-fibre"
+    },
+    "valsmeta": {
+      "base": "/resources/envs/notelus/vals-meta"
+    },
+    "dataFiles": {
+      "base": "/resources/envs/notelus/data"
+    },
+    "telusapis": {
+      "base": "/resources/templates/telusapis"
+    }
+  },
+  "logLevel": "TRACE",
+  "throwErrorsFromLogger": false,
+  "dataSetDetailedReportsDir": "/reports/data-set-reports",
+  "browser": "chrome",
+  "testapp": {
+    "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/home",
+    "urlcontains": "guest",
+    "user": "x228550",
+    "password": "Passw0rd"
+  },
+  "dbconfig": {
+    "user": "NCMBE",
+    "password": "Telus2016",
+    "connectString": "NCMBE1IT:41521/NCMBE1ITsv1",
+    "externalAuth": false
+  },
+  "telusapis": {
+    "manualTaskCompletion": {
+      "base": "https://flcncapp-itn01.tsl.telus.com/",
+      "endpoint": "manualTask/performTaskAction/#TASK_OBJECT_ID#/complete",
+      "contentType": "",
+      "fileForBody": "",
+      "keywordsToReplace": ["#TASK_OBJECT_ID#"]
+    },
+    "workOrderCompletion": {
+      "base": "https://flcncapp-itn01.tsl.telus.com/",
+      "endpoint": "notifications/NCNotificationConsumerWebServiceWFM",
+      "contentType": "text/xml",
+      "fileForBody": "WoCompleteEvent.xml",
+      "keywordsToReplace": ["#workOrderId#"]
+    },
+    "releaseActivation": {
+      "base": "https://flcncapp-itn01.tsl.telus.com/",
+      "endpoint": "notifications/NCNotificationConsumerWebServiceWFM",
+      "contentType": "text/xml",
+      "fileForBody": "ReleaseActivation.xml",
+      "keywordsToReplace": ["#workOrderId#"]
+    },
+    "shipmentOrderCompletion": {
+      "base": "https://flcncapp-itn01.tsl.telus.com/",
+      "endpoint": "generic/NCSOAPIntegrationWebServiceOperation",
+      "contentType": "text/xml",
+      "fileForBody": "TrackingInfo_AsynchRequest.xml",
+      "keywordsToReplace": [
+        "#orderNumber#",
+        "#trackingNumber#",
+        "#expectedDeliveryDate#",
+        "#purchaseOrderNumber#",
+        "#shipper#"
+      ]
+    }
+  },
+  "timeouts": {
+    "test": 1200000,
+    "apitest": 60000,
+    "uitest": 3600000,
+    "pageload": 300000,
+    "urlchange": 60000,
+    "scriptasyncload": 120000,
+    "implicit": 120000,
+    "element": 120000
+  },
+  "testDataAssets": [
+    {
+      "testId": "TEST-0001",
+      "dataFile": "WeatherData.xlsx",
+      "dataSheet": "Sheet1"
+    },
+    {
+      "testId": "TEST-0002",
+      "dataFile": "weather-parallel-2-xlsx.xlsx",
+      "dataSheet": "Sheet1"
+    },
+    {
+      "testId": "TEST-0003",
+      "dataFile": "weather-parallel-3-xlsx.xlsx",
+      "dataSheet": "Sheet1"
+    },
+    {
+      "testId": "PET-GET-TESTS-0001",
+      "dataFile": "pet-api-test-data.xlsx",
+      "dataSheet": "pet-get-by-id"
+    },
+    {
+      "testId": "SAMPLE-TODO-APP-0001",
+      "dataFile": "sample-to-do-data-driven.xlsx",
+      "dataSheet": "sheet1dd"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/home",
+      "urlcontains": "guest",
+      "testId": "AGENT-TEST-0001",
+      "dataFile": "agent-test-data.xlsx",
+      "dataSheet": "new-customer"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "HOME-SECURITY-TEST-0001",
+      "dataFile": "home-security-test-data.xlsx",
+      "dataSheet": "new-customer"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "PROVIDE-1-TEST",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "provide-1"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "PROVIDE-2-TEST",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "provide-2"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "PROVIDE-3-TEST",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "provide-3"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "Cease-1",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "cease-1"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "Cease-2",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "cease-2"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "Move-1",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "move-1"
+    },
+    {
+      "url": "https://flcncapp-itn01-csr.tsl.telus.com/web/guest/csr-desktop",
+      "urlcontains": "csr-desktop|login|SSO",
+      "testId": "Move-2",
+      "dataFile": "shs-lw-test-data-itn01.xlsx",
+      "dataSheet": "move-2"
+    }
+  ]
+}

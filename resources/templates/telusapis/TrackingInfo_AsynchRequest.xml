@@ -1,0 +1,41 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ossj.org/xml/Common/v1-5">
+<soapenv:Header/>
+<soapenv:Body>
+<v1:genericNCIntegrationOperation>
+<v1:item>
+<v1:CharacteristicValue>
+<v1:Value>success</v1:Value>
+<v1:Characteristic>status</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>#orderNumber#</v1:Value>
+<v1:Characteristic>Order Number</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>#trackingNumber#</v1:Value>
+<v1:Characteristic>Tracking Number</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>#expectedDeliveryDate#</v1:Value>
+<v1:Characteristic>Expected Delivery Date</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>#purchaseOrderNumber#</v1:Value>
+<v1:Characteristic>Purchase Order Number</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>#shipper#</v1:Value> 
+<v1:Characteristic>Shipper</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>notifystatus</v1:Value>
+<v1:Characteristic>operation name</v1:Characteristic>
+</v1:CharacteristicValue>
+<v1:CharacteristicValue>
+<v1:Value>logistics</v1:Value>
+<v1:Characteristic>notification type</v1:Characteristic>
+</v1:CharacteristicValue>
+</v1:item>
+</v1:genericNCIntegrationOperation>
+</soapenv:Body>
+</soapenv:Envelope>

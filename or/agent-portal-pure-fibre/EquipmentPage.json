@@ -1,0 +1,567 @@
+{
+  "pagename": "EquipmentPage",
+  "urlcontains": "equipment",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-caption__title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DeliveryMethodsCollection",
+      "meta": {
+        "type": "label",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-delivery-method-section label",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddOnAdditionalEquipmentTitleCollection",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-equipment__item-title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "YouPickNextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#next",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EquipmentDetailsNextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#next",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AdditionalNextButton",
+      "meta": {
+        "type": "button",
+        "id": "next",
+        "xpath": "",
+        "className": "",
+        "css": "#next > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".button.cart__next-button.jsNextButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Rule4kPopupContinueWithOrder",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".popup-container > .popup-placeholder > .popup button#portal_action_ignore.submit-btn",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MyEquipmentsList",
+      "meta": {
+        "type": "p",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-equipment__included-list-item",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "IncludedEquipmentsList",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-equipment__itembox-title._included",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AdditionalEquipmentsList",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@data-target='sectionAdditionalEquipments']//div[@class='wiz-equipment__itembox-title _simple']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AllQuantityFieldsList",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-quantity__input",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OneTimePaymentTab",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@data-tab='purchase' and contains(@class,'js-child-equipment-tab')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EasyPaymentsTab",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@data-tab='easy-payment' and contains(@class,'js-child-equipment-tab')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "HomeSecurityEquipmentAddButton",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/../..//div[@data-tab='purchase' and contains(@class,'_disable')]//button[contains(@class,'plus')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "HomeSecurityEquipmentMinusButton",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/../..//div[@data-tab='purchase' and contains(@class,'_disable')]//button[contains(@class,'minus')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EquipmentList",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "Add",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AvailableServices",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".service__offers",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmTakeOver",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".submit-btn>span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "IncludedEquipment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//h3[text()=' Included Equipment']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServicePlanHeader",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//span[text()='$$TEXT$$']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TVQuantity",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#tv-quantity-button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "QuantityDropdown",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//li[@class='ui-menu-item']",
+        "className": "",
+        "css": ".ui-menu-item",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OrderSteps",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[contains(@class,'step-nav__unit')]",
+        "className": "",
+        "css": "div.step-nav__unit",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "YouPickItemList",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='wiz-equipment__simple-item-title js-title-selection-you-pick']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Continue",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//span[text()='Continue']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "HSIncludedEquipment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//*[contains(text(),'Included Equipment')]/following-sibling::div//div[@class='wiz-equipment__simple-item-title wiz-equipment__itembox-title _simple']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "HSAdditionalEquipment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//*[contains(text(),'Additional Equipment')]/following-sibling::div//div[@class='wiz-equipment__simple-item-title wiz-equipment__itembox-title _simple']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "HSIncludedEquipmentButton",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//*[contains(text(),'Included Equipment')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "InstallationChargesPopUp",
+      "meta": {
+        "type": "p",
+        "id": "",
+        "xpath": "//p[contains(text(),'An Installation charge of')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "YourPickCamera",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/../../following-sibling::div//button[contains(@class,'plus')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CurrentOrderSteps",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[contains(@class,'step-nav__unit_current')]",
+        "className": "",
+        "css": "div.step-nav__unit",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CameraCountMsg",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='tooltip-wrap _plus']/div/p",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OKPopUp",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='tooltip-wrap _plus']//div/button",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EquipmentDD",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='wiz-equipment__simple-item-title wiz-equipment__itembox-title _simple' and text()='$$TEXT$$']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TelusEasyPayment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/../..//div[contains(text(),'Telus Easy Payment')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "QuantityLoadIcon",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='wiz-quantity _loading cbCtrl-disabled']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TakeoverEquipment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//h3[@class='wiz-equipment__block-title js-title-selection-takeover ']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddTakeOverEquipment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/../..//div[@class='js-quantity-control-block']//button[@class='wiz-quantity__control  js-quantity-control _plus']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddEquipmentWithEasyPayment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/../..//div[@data-tab='easy-payment' and contains(@class,'_disable')]//button[contains(@class,'plus')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Spinner",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='spinner _spinning _fill-container']",
+        "className": "",
+        "css": "svg.spinner__svg",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LWAddEquipment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/..//button[contains(@class,'_plus')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Quantityload",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='wiz-quantity _loading cbCtrl-disabled']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddQuantity",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']/ancestor::div[contains(@class,'__simple-item')]//button[@class='wiz-quantity__control  js-quantity-control _plus']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "clickOnNextInCustomize",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//button[@class='button _wider _next']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SwapButtonEquipment",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//p[text()='$$TEXT$$']/../a",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EquipmentInSwapPopUp",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay js-swap-equipment-pop-up']//div[text()='$$TEXT$$']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ReasonCodeDropDown",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay js-swap-equipment-pop-up']//span[@class='ui-selectmenu-button ui-widget ui-state-default ui-corner-all']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ReasonCodeList",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay js-swap-equipment-pop-up']//li",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OkButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay js-swap-equipment-pop-up']//button[@id='okBtn']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SwappedToList",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//h4[text()='Swapped To']/..//p",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,731 @@
+/* eslint-disable no-unused-vars */
+/**
+ * @group allTests
+ * @group shs-lw-tests
+ * @group otherproducts-tests
+ * @group otherproducts1
+ */
+
+require("../../../../src/globals/MyTypeDefs");
+require("../../../../src/globals/enumerations");
+
+const { TestResultStatus } = require("../../../../src/globals/enumerations");
+
+const brw = require("../../../../src/sel-js/Browser");
+const sel = require("../../../../src/sel-js/SelUtils");
+const config = require("../../../../br-config");
+const logger = require("../../../../src/logger/Logger");
+const StringUtils = require("../../../../src/utils/common/StringUtils");
+const ExcelUtils = require("../../../../src/utils/excel/excelUtils");
+const DataReader = require("../../../../src/sel-js/DataReader");
+const FileSystem = require("../../../../src/utils/common/FileSystem");
+const FileWriter = require("../../../../src/utils/common/FileWriter");
+const TestResult = require("../../../../src/globals/results/TestResult");
+const { Validator } = require("../../../../src/globals/TestObjects");
+const DbUtils = require("../../../../src/utils/dbutils/DbUtils");
+
+const du = DbUtils.DbUtils;
+const dq = DbUtils.DbQueries;
+
+const TestIdsMap = require("../../../../src/globals/TestIdsMap");
+
+const SsoLoginPage = require("../../../../src/pages/common/SsoLoginPage");
+const CsrDesktopPage = require("../../../../src/pages/home-security/CsrDesktopPage");
+const SelectServicesPage = require("../../../../src/pages/home-security/SelectServicesPage");
+const EquipmentPage = require("../../../../src/pages/home-security/EquipmentPage");
+const AppointmentPage = require("../../../../src/pages/home-security/AppointmentPage");
+const CheckoutPage = require("../../../../src/pages/home-security/CheckoutPage");
+const ShippingDetailsPage = require("../../../../src/pages/home-security/ShippingDetailsPage");
+const SubmitSuccessPage = require("../../../../src/pages/home-security/SubmitSuccessPage");
+const AccountPage = require("../../../../src/pages/home-security/AccountPage");
+const RulesPopup = require("../../../../src/pages/home-security/RulesPopup");
+const EmergencyPage = require("../../../../src/pages/home-security/EmergencyContactPage");
+const PermitPage = require("../../../../src/pages/home-security/PermitPage");
+const CustomizePage = require("../../../../src/pages/home-security/CustomizePage");
+const TelusApis = require("../../../../src/utils/telus-apis/TelusApis");
+
+const eu = new ExcelUtils();
+const dr = new DataReader();
+const tval = new Validator();
+const tapis = new TelusApis();
+const testId = TestIdsMap.other2TestID;
+const valFile = "shs-and-lw-test-scenarios";
+
+const envcfg = config.getConfigForGivenEnv();
+const dbcfg = config.getDbConfig(envcfg);
+const apicfg = config.getTelusApisConfig(envcfg);
+
+const configDataAsset = config.getTestDataAssetsForGivenTestId(envcfg, testId);
+const sheetDataAsJsonArray = eu.sheetOnNameAsJsonArray(
+  configDataAsset.dataFile,
+  configDataAsset.dataSheet
+);
+// eslint-disable-next-line no-console
+console.table(sheetDataAsJsonArray);
+
+/**
+ * @type TestCaseResultObject
+ */
+let caseResult;
+describe("SHS and LW Test Scenarios", () => {
+  beforeAll(() => {
+    logger.enterMethod("beforeAll");
+    jest.setTimeout(envcfg.timeouts.uitest);
+    logger.exitMethod("beforeAll");
+  });
+
+  afterAll(() => {
+    logger.enterMethod("afterAll");
+    const dsRepDir = config.getLocationDataSetReportsDirForGivenEnv();
+    logger.info(dsRepDir);
+    if (FileSystem.fileExistsSync(dsRepDir) === false) {
+      logger.error(
+        `Can not write case-results to non-existent location ${dsRepDir}`
+      );
+    }
+    FileWriter.sync(
+      `${dsRepDir}/${testId}.json`,
+      JSON.stringify(caseResult),
+      false
+    );
+
+    //sel.deleteAllCookies();
+    logger.exitMethod("afterAll");
+  });
+
+  afterEach(async () => {
+    logger.enterMethod("afterEach");
+    //await sel.captureScreenshot(testId);
+    logger.exitMethod("afterEach");
+  });
+
+  const testName =
+    "Other-Products-02: HS and Optik TV to already existing connection";
+  describe(testName, () => {
+    beforeAll(() => {
+      logger.enterMethod("beforeAll Other-Products-01");
+      caseResult = TestResult.TestCaseResult(testId, testName);
+
+      logger.exitMethod("beforeAll Other-Products-01");
+    });
+
+    logger.debug(`Starting for all data-sets for test-id ${testId}`);
+    sheetDataAsJsonArray.forEach((singleJsonRowObject, index) => {
+      test(`${testName} for data-set-${index + 1}`, async (done) => {
+        logger.enterMethod(`Test started for data-set-${index + 1}`);
+        dr.setDataSetObject(singleJsonRowObject, index);
+        const dsObj = dr.getDataSetObject(index);
+        const executeOrNot = dr.getDataSetKeyValue(
+          dsObj,
+          "input",
+          "data-set-enabled"
+        );
+        logger.debug(
+          `Dataset ${index} at is having execution flag set to ${executeOrNot}`
+        );
+        caseResult.datasets.push(dr.getDataSetObject(index));
+        if (executeOrNot === "Y") {
+          return await stepsOther2(dsObj, index)
+            .then((v) => {
+              logger.result(`Test result for data-set-${index + 1}: ${v}`);
+              logger.exitMethod(`Test finished for data-set-${index + 1}`);
+              done();
+            })
+            .catch((ex) => {
+              logger.error(`Test error for data-set-${index + 1}: ${ex}`);
+              throw ex;
+              //done();
+            });
+        }
+        return (async () => {
+          caseResult.datasets[index].result = TestResultStatus.Skipped;
+          logger.exitMethod(
+            `Test finished as skipped for data-set-${index + 1}`
+          );
+          pending();
+          //return "success";
+        })(); //.then(done());
+      }); // test block ending
+    }); // for loop ending
+  }); // inner describe block ending
+}); // describe block ending
+
+async function stepsOther2(dsObj, datasetindex) {
+  expect.hasAssertions(); // At least one assertion is called during a test
+  expect(dsObj).toBeDefined();
+  let isValEnabled = true;
+
+  logger.debug(`Till now case result: ${JSON.stringify(caseResult.datasets)}`);
+  try {
+    const drv = await brw.initializeDriver(envcfg.browser);
+    await sel.setDriver(drv);
+    caseResult.datasets[datasetindex].result = TestResultStatus.Fail;
+
+    await sel.navigateTo(configDataAsset.url, configDataAsset.urlcontains);
+
+    await SsoLoginPage.login(envcfg.testapp.user, envcfg.testapp.password);
+
+    const provide1Email = config.getFirstTestDataAssetResultsForGivenTestId(
+      TestIdsMap.provide1TestId
+    ).request.email;
+    await CsrDesktopPage.searchCustomerForEmail(provide1Email);
+
+    await CsrDesktopPage.clickOnServiceslink();
+
+    await AccountPage.clickOnAddService("Optik TV");
+
+    const allAvailsAndSelected = [];
+
+    let availsAndSelected = await SelectServicesPage.selectServicesCommitmentPlanProvider(
+      dr.getDataSetKeyValue(dsObj, "input", "services"),
+      dr.getDataSetKeyValue(dsObj, "input", "commitments"),
+      dr.getDataSetKeyValue(dsObj, "input", "serviceplan"),
+      dr.getDataSetKeyValue(dsObj, "input", "serviceprovider")
+    );
+    allAvailsAndSelected.push(availsAndSelected);
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      allAvailsAndSelected
+    );
+    logger.result(
+      `There were available services ${JSON.stringify(allAvailsAndSelected)}`
+    );
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-available-services"
+    );
+    if (isValEnabled) {
+      logger.debug(`Validating available and selected services`);
+      expect(availsAndSelected).not.toBeNull();
+      expect(availsAndSelected).not.toBeUndefined();
+      const expectedplan = dr.getDataSetKeyValue(dsObj, "expected", "plan");
+      // let expectedEquipment =  dr.getDataSetKeyValue(dsObj,"expected","Equipment");
+      const expectedPrice = dr.getDataSetKeyValue(
+        dsObj,
+        "expected",
+        "productprice"
+      );
+      expect(availsAndSelected.cartItems.cartPlan).toContain(expectedplan);
+      expect(availsAndSelected.cartItems.cartPrice).toContain(expectedPrice);
+    }
+
+    const tvservice = dr.getDataSetKeyValue(dsObj, "input", "tvservices");
+    const tvcommitments = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "tvcommitments"
+    );
+    const tvproducttype = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "tvproducttype"
+    );
+    const tvproductpackage = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "tvproductpackage"
+    );
+    const tvpackagesecondary = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "tvpackagesecondary"
+    );
+    availsAndSelected = await SelectServicesPage.selectTVPlan(
+      tvservice,
+      tvcommitments,
+      tvproducttype,
+      tvproductpackage,
+      tvpackagesecondary
+    );
+    allAvailsAndSelected.push(availsAndSelected);
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      allAvailsAndSelected
+    );
+    logger.result(
+      `There were available services ${JSON.stringify(availsAndSelected)}`
+    );
+
+    const internetservice = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "internetservice"
+    );
+    const internetcommitments = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "internetcommitments"
+    );
+    const internetproductoffering = dr.getDataSetKeyValue(
+      dsObj,
+      "input",
+      "internetproductoffering"
+    );
+
+    availsAndSelected = await SelectServicesPage.selectInternetPlan(
+      internetservice,
+      internetcommitments,
+      internetproductoffering
+    );
+    allAvailsAndSelected.push(availsAndSelected);
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      allAvailsAndSelected
+    );
+    logger.result(
+      `There were available services ${JSON.stringify(availsAndSelected)}`
+    );
+
+    await SelectServicesPage.clickNextButton();
+
+    await CustomizePage.selectFeature(
+      dr.getDataSetKeyValue(dsObj, "input", "internetfeature")
+    );
+
+    await CustomizePage.clickNextButton();
+
+    await EquipmentPage.clickOnNextButton();
+
+    await RulesPopup.clickOnProceed();
+
+    const allequipments = [];
+
+    let equipments = await EquipmentPage.completeHomeSecuritySectionOnDefaults();
+
+    allequipments.push(equipments);
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      allequipments
+    );
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-default-equipments"
+    );
+    if (isValEnabled) {
+      logger.debug(`Validating default equipments available or not`);
+      expect(equipments).not.toBeNull();
+      expect(equipments).not.toBeUndefined();
+
+      expect(equipments.myEquipments).not.toBeNull();
+      expect(equipments.myEquipments).not.toBeUndefined();
+
+      expect(equipments.includedEquipments).not.toBeNull();
+      expect(equipments.includedEquipments).not.toBeUndefined();
+
+      expect(equipments.additionalEquipments).not.toBeNull();
+      expect(equipments.additionalEquipments).not.toBeUndefined();
+    }
+
+    await EquipmentPage.completeTVSection("1");
+
+    await RulesPopup.clickOnConfirm();
+
+    const internetequipments = await EquipmentPage.completeHomeSecuritySectionOnDefaults();
+
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      internetequipments
+    );
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-default-equipments"
+    );
+    if (isValEnabled) {
+      logger.debug(`Validating default equipments available or not`);
+      expect(internetequipments).not.toBeNull();
+      expect(internetequipments).not.toBeUndefined();
+
+      expect(internetequipments.myEquipments).not.toBeNull();
+      expect(internetequipments.myEquipments).not.toBeUndefined();
+
+      expect(internetequipments.includedEquipments).not.toBeNull();
+      expect(internetequipments.includedEquipments).not.toBeUndefined();
+
+      expect(internetequipments.additionalEquipments).not.toBeNull();
+      expect(internetequipments.additionalEquipments).not.toBeUndefined();
+    }
+
+    // await EquipmentPage.completeYouPickSectionOnDefaults();
+    // logger.result(`Default equipments are selected `);
+
+    let deliveryMethod = "Self";
+    equipments = await EquipmentPage.completeHomeSecuritySectionOnDefaults(
+      deliveryMethod,
+      true
+    );
+
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, equipments);
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-default-equipments"
+    );
+    if (isValEnabled) {
+      logger.debug(`Validating default equipments available or not`);
+      expect(equipments).not.toBeNull();
+      expect(equipments).not.toBeUndefined();
+
+      expect(equipments.myEquipments).not.toBeNull();
+      expect(equipments.myEquipments).not.toBeUndefined();
+
+      expect(equipments.includedEquipments).not.toBeNull();
+      expect(equipments.includedEquipments).not.toBeUndefined();
+
+      expect(equipments.additionalEquipments).not.toBeNull();
+      expect(equipments.additionalEquipments).not.toBeUndefined();
+    }
+
+    deliveryMethod = "Self";
+    equipments = await EquipmentPage.completeLivingWellSectionOnDefaults(
+      deliveryMethod
+    );
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, equipments);
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-default-equipments"
+    );
+    if (isValEnabled) {
+      logger.debug(`Validating default equipments available or not`);
+      expect(equipments).not.toBeNull();
+      expect(equipments).not.toBeUndefined();
+
+      expect(equipments.myEquipments).not.toBeNull();
+      expect(equipments.myEquipments).not.toBeUndefined();
+
+      expect(equipments.includedEquipments).not.toBeNull();
+      expect(equipments.includedEquipments).not.toBeUndefined();
+      const allIncludedEquipment = dr.getDataSetKeyValue(
+        dsObj,
+        "expected",
+        "IncludedEquipment"
+      );
+      expect(
+        StringUtils.replaceAll(
+          JSON.stringify(equipments.includedEquipments),
+          "[^a-zA-Z_]",
+          ""
+        )
+      ).toContain(
+        StringUtils.replaceAll(allIncludedEquipment, "[^a-zA-Z_]", "")
+      );
+    }
+
+    const AddOnAdditionalEquipments = await EquipmentPage.completeAddOnEquipmentSectionOnDefaults();
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      AddOnAdditionalEquipments
+    );
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-no-additional-equipment"
+    );
+    if (isValEnabled) {
+      logger.result(`No option to add any additional equipment`);
+      expect(AddOnAdditionalEquipments).not.toBeNull();
+      expect(AddOnAdditionalEquipments).not.toBeUndefined();
+    }
+
+    await RulesPopup.acceptRulesSafely();
+
+    await EquipmentPage.clickOnNextButton();
+
+    await EmergencyPage.enterSitePhoneNumber(
+      dr.getDataSetKeyValue(dsObj, "input", "contactphonenumber")
+    );
+
+    await EmergencyPage.addEmergencyContact("1231412399", "Password");
+
+    await EmergencyPage.clickNextButton();
+
+    const permit = await PermitPage.validatePermitSectionIsAvailable();
+    isValEnabled = tval.isValidationEnabled(
+      "shs-and-lw-test-scenarios",
+      testId,
+      "validate-permit-active"
+    );
+    if (isValEnabled) {
+      logger.result(`Validate Permit section is available`);
+
+      expect(permit).not.toBeNull();
+      expect(permit).not.toBeUndefined();
+      expect(permit).toBeTruthy();
+    }
+    await PermitPage.enterPermitNumber();
+
+    await PermitPage.enterExpiryDate();
+
+    await PermitPage.clickNextButton();
+
+    await AppointmentPage.submitAnyAvailableAppointment(
+      dr.getDataSetKeyValue(dsObj, "input", "firstname"),
+      dr.getDataSetKeyValue(dsObj, "input", "contactphonenumber"),
+      dr.getDataSetKeyValue(dsObj, "input", "additionalinfo")
+    );
+
+    /* await CheckoutPage.applyPromoCode(
+         dr.getDataSetKeyValue(dsObj, "input", "couponcode")
+     );*/
+
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-tax-rate"
+    );
+    const tax = await CheckoutPage.getEstimatedMonthlyTotalTaxes();
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, tax);
+    if (isValEnabled) {
+      const taxToValidate = dr.getDataSetKeyValue(
+        dsObj,
+        "expected",
+        "taxtovalidate"
+      );
+      logger.debug(`Validating tax ${tax} with ${taxToValidate}`);
+      expect(StringUtils.equalsIgnoreCase(tax, tax)).toBeTruthy();
+    }
+
+    const cost = await CheckoutPage.getDueMonthlyBeforeTaxMatching();
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, cost);
+    isValEnabled = tval.isValidationEnabled(valFile, testId, "validate-cost");
+    if (isValEnabled) {
+      const costToValidate = dr.getDataSetKeyValue(
+        dsObj,
+        "expected",
+        "costtovalidate"
+      );
+      logger.debug(`Validating cost ${cost} with ${costToValidate}`);
+      expect(StringUtils.equalsIgnoreCase(cost, costToValidate)).toBeTruthy();
+    }
+
+    await CheckoutPage.acceptTermsSafelyAndMoveToNext();
+
+    await ShippingDetailsPage.clickSimpleSwitch();
+
+    await ShippingDetailsPage.clickSubmitButton();
+
+    await ShippingDetailsPage.clickSubmitButton();
+
+    // await CreditApprovalPage.clickNextToCreditCheckResult();
+
+    // await BillingInformationPage.acceptAgentAdviseAndSaveContact(
+    //   dr.getDataSetKeyValue(dsObj, "input", "contactphonenumber")
+    // );
+
+    const output = await SubmitSuccessPage.verifyThanksMessageForSuccessfulSubmissionOfOrder();
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, output);
+    caseResult.datasets[datasetindex].result = TestResultStatus.Pass;
+
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-order-submission"
+    );
+    if (isValEnabled) {
+      logger.debug(
+        `Validating order submission by getting order number generated from Agent portal`
+      );
+      expect(output).not.toBeNull();
+      expect(output).not.toBeUndefined();
+
+      expect(output.orderNumber).not.toBeNull();
+      expect(output.orderNumber).not.toBeUndefined();
+    }
+
+    const order = {};
+    logger.debug("Fetching customer's internal id");
+    const customerId = await du.getValue(
+      dbcfg,
+      dq.queryNcCustomerIdFromSaleOrderNumber(dbcfg, output.orderNumber)
+    );
+    logger.debug(`Customer's internal id: ${customerId}`);
+    order.customerId = customerId;
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, customerId);
+
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-order-submission"
+    );
+    if (isValEnabled) {
+      logger.debug(
+        `Validating order submission by querying NetCracker BE for order number ${output.orderNumber} by validating if this order exists for registered customer`
+      );
+      expect(customerId).not.toBeNull();
+      expect(customerId).not.toBeUndefined();
+    }
+
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-be-time-zone"
+    );
+    if (isValEnabled) {
+      logger.debug(
+        `Validating no error occured on NetCracker BE for timezone of ${output.orderNumber}`
+      );
+      const customerErrors = await du.getErrorsOccuredForCustomer(
+        dbcfg,
+        customerId
+      );
+      expect(customerErrors).not.toBeNull();
+      expect(customerErrors).not.toBeUndefined();
+      expect(customerErrors.length > 0).toBeFalsy();
+    }
+
+    logger.debug("Completing manual tasks in case any");
+    const manualTaskId = await du.getManualCreditTaskId(dbcfg, customerId);
+    if (StringUtils.isEmpty(manualTaskId) === false) {
+      const res = await tapis.processManualTask(apicfg, manualTaskId);
+      logger.debug(
+        `Manual task ${manualTaskId} completion status code: ${res.status}`
+      );
+    }
+
+    const pendingWorkOrders = await du.getWorkOrderNumbersNotCompleted(
+      dbcfg,
+      customerId
+    );
+    for (let orIndex = 0; orIndex < pendingWorkOrders.length; orIndex++) {
+      //let orderInternalId = pendingWorkOrders[orIndex][1];
+      const workOrderNumber = pendingWorkOrders[orIndex][0];
+      const workOrderName = pendingWorkOrders[orIndex][2];
+      if (StringUtils.containsIgnoreCase(workOrderName, "work order")) {
+        // Hit release activation in case order is in entering state
+        await tapis.processReleaseActivation(apicfg, workOrderNumber);
+        // Wait for 10 seconds to get completed
+        await sel.getWaitUtils().sleep(10000);
+
+        // Hit work order completion
+        await tapis.processWorkOrder(apicfg, workOrderNumber);
+        // Wait for 10 seconds to get completed
+        await sel.getWaitUtils().sleep(10000);
+      }
+    }
+
+    logger.debug("Fetching customer's all order item's status");
+    const allcustomerOrdStatus = {};
+    const allOrdersStatus = await du.select(
+      dbcfg,
+      dq.queryNcCustomerOrdersStatus(dbcfg, customerId)
+    );
+    logger.debug(`Orders' statuses: ${JSON.stringify(allOrdersStatus)}`);
+    allcustomerOrdStatus.allOrdersStatus = allOrdersStatus;
+
+    logger.debug("Fetching customer's all pending order item's status");
+    const allPendingOrders = await du.select(
+      dbcfg,
+      dq.queryNcCustomerOrdersStatusNeitherCompletedNorProcessed(
+        dbcfg,
+        customerId
+      )
+    );
+    logger.debug(
+      `Pending Orders' statuses: ${JSON.stringify(allPendingOrders)}`
+    );
+    allcustomerOrdStatus.allPendingOrders = allPendingOrders;
+    logger.debug(
+      `Order's statuses till now: ${JSON.stringify(allcustomerOrdStatus)}`
+    );
+    // storeOutputToDataSetResult(caseResult, datasetindex, allcustomerOrdStatus);
+
+    const custErrors = {};
+    custErrors.err = await du.getErrorsOccuredForCustomer(dbcfg, customerId);
+    TestResult.storeOutputToDataSetResult(caseResult, datasetindex, custErrors);
+
+    const allnonprocessedOrders = {};
+    if (
+      allPendingOrders != null &&
+      allPendingOrders !== undefined &&
+      allPendingOrders.length > 0
+    ) {
+      for (let orIndex = 0; orIndex < allPendingOrders.length; orIndex++) {
+        const orderInternalId = allPendingOrders[orIndex][1];
+        const orderName = allPendingOrders[orIndex][0];
+        if (StringUtils.containsIgnoreCase(orderName, "shipment")) {
+          // Hit release activation in case order is in entering state
+          await tapis.processReleaseActivation(apicfg, orderInternalId);
+          // Wait for 10 seconds to get completed
+          await sel.getWaitUtils().sleep(10000);
+
+          const res = await du.getShipmentOrderNumberAndPurchaseOrderNumber(
+            dbcfg,
+            orderInternalId
+          );
+          // Hit shipment order completion
+          await tapis.processShipmentOrder(
+            apicfg,
+            res.shipmentOrderNumber,
+            res.purchaseeOrderNumber
+          );
+          // Wait for 10 seconds to get completed
+          await sel.getWaitUtils().sleep(10000);
+
+          allnonprocessedOrders.ordersnotprocessed = await du.select(
+            dbcfg,
+            dq.queryNcCustomerOrdersStatusNeitherCompletedNorProcessed(
+              dbcfg,
+              customerId
+            )
+          );
+        }
+      }
+    }
+
+    TestResult.storeOutputToDataSetResult(
+      caseResult,
+      datasetindex,
+      allnonprocessedOrders
+    );
+
+    const service = dr.getDataSetKeyValue(dsObj, "input", "serviceplan");
+    isValEnabled = tval.isValidationEnabled(
+      valFile,
+      testId,
+      "validate-services-active"
+    );
+    if (isValEnabled) {
+      logger.debug(`Validating service [${service}] is active or not`);
+
+      await SubmitSuccessPage.clickComplete();
+      await CsrDesktopPage.searchCustomerForEmail(
+        dr.getDataSetKeyValue(dsObj, "input", "email")
+      );
+      await CsrDesktopPage.clickOnServiceslink();
+      const servicePlan = dr.getDataSetKeyValue(dsObj, "input", "serviceplan");
+      const isActive = await AccountPage.validateStatusIsActiveForGivenService(
+        servicePlan
+      );
+
+      expect(isActive).not.toBeNull();
+      expect(isActive).not.toBeUndefined();
+      expect(isActive).toBeTruthy();
+    }
+
+    const imgPath = await sel.captureScreenshot(
+      `${testId}-ds-${datasetindex}-PASS`
+    );
+    caseResult.datasets[datasetindex].result = TestResultStatus.Pass;
+    caseResult.datasets[datasetindex].screenshotLocation = imgPath;
+
+    //await sel.quit();
+    return "success";
+  } catch (err) {
+    logger.error(err);
+    caseResult.datasets[datasetindex].error = err;
+    const imgPath = await sel.captureScreenshot(
+      `${testId}-ds-${datasetindex}-FAIL`
+    );
+    caseResult.datasets[datasetindex].screenshotLocation = imgPath;
+    throw err;
+  }
+}

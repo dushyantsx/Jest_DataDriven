@@ -1,0 +1,139 @@
+{
+  "pagename": "RulesPopup",
+  "urlcontains": "",
+  "elements": [
+    {
+      "identifier": "RulesList",
+      "meta": {
+        "type": "text",
+        "id": "rulesPopuppRules",
+        "xpath": "",
+        "className": "",
+        "css": "#rulesPopuppRules li",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OkButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[contains(@class,'popup-overlay') and not(contains(@style, 'none'))]//button",
+        "className": "",
+        "css": "#rulesPopuppRules #rulOkCancelBtn",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Rule4kPopupContinueButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay' and @style='' or @style='display: block']//button",
+        "className": "",
+        "css": ".popup-container > .popup-placeholder > .popup button.submit-btn",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "text",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[contains(@class,'popup-overlay') and not(contains(@style, 'none'))]//section[@class='popup-form']//li",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmTakeOver",
+      "meta": {
+        "type": "section",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay' and @style='' or @style='display: block']//section[@class='popup-content']",
+        "className": "",
+        "css": "#rule4kPopup>.popup-content",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Proceed",
+      "meta": {
+        "type": "section",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#tvTooltip #popupToolbar button#proceed",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Confirm",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[text()='Confirm']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContinueWithOrder",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[text()='Continue with order']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PopupContent",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay' and @style='' or @style='display: block']//section[@class='popup-content']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MultiplePopupContent",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay' and not(contains(@style,'none' ))][$$TEXT$$]//p",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MultiplePopupbutton",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[@class='popup-overlay' and not(contains(@style,'none' ))][$$TEXT$$]//button",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+      },
+      {
+        "identifier": "Continue",
+        "meta": {
+          "type": "span",
+          "id": "",
+          "xpath": "//span[@id='popupButton' and text()='Continue']",
+          "className": "",
+          "css": "",
+          "linkText": ""
+        }
+      
+    }
+  ]
+}

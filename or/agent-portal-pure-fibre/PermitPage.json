@@ -1,0 +1,160 @@
+{
+  "pagename": "PermitPage",
+  "urlcontains": "permit",
+  "elements": [
+    {
+      "identifier": "PermitNumber",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@name='permitNumber']",
+        "className": "",
+        "css": "input[name='permitNumber']",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ExpiryDate",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@name='expiryDate']",
+        "className": "",
+        "css": "input[name='expiryDate']",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Save",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[text()='Save']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Next",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "    //span[text()='Next']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PermitTab",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[text()='Permit Information']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LWFirstName",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@name='contactFirstName']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LWLastName",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@name='contactLastName']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LWContactNumber",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@placeholder='Customer Contact Number']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EmergencyContactNumber",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@placeholder='Phone Number']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EmergencyContactName",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@name='contactName']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddContactButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[text()='Add Contact']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContactListNumber",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[text()='Call List Number']/parent::div//button",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContactListOrder",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='btn-group app-custom-select__group open show']//li",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Spinner",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='spinner _spinning _fill-container']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

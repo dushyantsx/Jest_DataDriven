@@ -1,0 +1,17 @@
+{
+  "pagename": "CreditApprovalPage",
+  "urlcontains": "credit_approval",
+  "elements": [
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".jsCreditCheckNextButton",
+        "linkText": ""
+      }
+    }
+  ]
+}

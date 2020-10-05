@@ -1,0 +1,314 @@
+{
+  "pagename": "CheckoutPage",
+  "urlcontains": "checkout",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#serActivateWizCaption > p",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ReviewOrderCustomerName",
+      "meta": {
+        "type": "td",
+        "id": "custName",
+        "xpath": "",
+        "className": "",
+        "css": "td#custName",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ReviewOrderCustomerAddress",
+      "meta": {
+        "type": "td",
+        "id": "currentLoc",
+        "xpath": "",
+        "className": "",
+        "css": "td#currentLoc",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OrderTotalToday",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//td[text()='Order total']/..//span[text()='one-time']/preceding-sibling::span",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EstimatedMonthlyTotalTaxes",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-checkout-data__subtotal._taxes .wiz-checkout-data__price-value",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DueMonthlyBeforeTaxText",
+      "meta": {
+        "type": "span",
+        "id": "price",
+        "xpath": "",
+        "className": "",
+        "css": "#price",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PromoCode",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".form-text__input.js-promo-input",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PromoCodeApplyButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".promo-code__button > .js-promo-btn-apply",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TermsAndCondition",
+      "meta": {
+        "type": "span",
+        "id": "termsConditnsIcon",
+        "xpath": "",
+        "className": "",
+        "css": "#termsConditnsIcon",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "button",
+        "id": "next",
+        "xpath": "//button[@id='next']",
+        "className": "",
+        "css": ".button.cart__next-button.jsNextButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EmailCheckbox",
+      "meta": {
+        "type": "checkbox",
+        "id": "",
+        "xpath": "//div[@class='email-confirmation__block-radio js-confirm-email-label']/label",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Discount",
+      "meta": {
+        "type": "table",
+        "id": "",
+        "xpath": "//tr[@class='wiz-checkout-data__discount']//em",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProductPrice",
+      "meta": {
+        "type": "table",
+        "id": "",
+        "xpath": "//td[text()='$$TEXT$$']/following-sibling::td[2]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TotalToday",
+      "meta": {
+        "type": "table",
+        "id": "",
+        "xpath": "//tr[@class='wiz-checkout-data__total _taxes']//span[@class='wiz-checkout-data__price-value']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PromoError",
+      "meta": {
+        "type": "table",
+        "id": "",
+        "xpath": "//div[@class='promo-code__body']//p[@class='form-text__message-text']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TopMenu",
+      "meta": {
+        "type": "div",
+        "id": "csrNotBottonHref",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DeleteShoppingCart",
+      "meta": {
+        "type": "li",
+        "id": "",
+        "xpath": "//li[@id='csrNoDeleteCart']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DiscountService",
+      "meta": {
+        "type": "li",
+        "id": "",
+        "xpath": "//div[@class='discounts__services-wrapper js-service-wrapper']//span[text()='$$TEXT$$']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DiscountReasonDropdown",
+      "meta": {
+        "type": "span",
+        "id": "ui-id-4-button",
+        "xpath": "//span[@class='ui-selectmenu-button ui-widget ui-state-default ui-corner-all']//span",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DiscountReasonValue",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//li[@class='ui-menu-item']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DiscountReasonValue",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='ui-selectmenu-button ui-widget ui-state-default ui-corner-all']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PartnersDropdown",
+      "meta": {
+        "type": "span",
+        "id": "ui-id-34-button",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PartnersDropdownList",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#ui-id-34-menu .ui-menu-item",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AppliedDiscountonProducts",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//tr[@class='wiz-checkout-data__discount']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button/span[text()='Confirm']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DiscountNames",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[text()='$10 off for 48 months']/..",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ApplyDicount",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[@class='discounts__filter-name wiz-checkbox__label js-discount-name']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ApplyDiscountButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@class='button color-green button-width-tds js-button-add-discounts  discounts__offers-buttons-add_active']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

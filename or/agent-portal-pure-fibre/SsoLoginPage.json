@@ -1,0 +1,50 @@
+{
+  "pagename": "SsoLoginPage",
+  "urlcontains": "login|SSO",
+  "elements": [
+    {
+      "identifier": "UserName",
+      "meta": {
+        "type": "text",
+        "id": "username",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Password",
+      "meta": {
+        "type": "password",
+        "id": "password",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "RememberMe",
+      "meta": {
+        "type": "checkbox",
+        "id": "",
+        "xpath": "//input[@id='remember-me-checkbox']/following-sibling::span",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LoginButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "button.button.button--primary",
+        "linkText": ""
+      }
+    }
+  ]
+}

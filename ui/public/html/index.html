@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title>JSON Schema Editor | Telus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="../jsoneditor.min.css" rel="stylesheet" type="text/css">
+    <script src="../jsoneditor.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #jsoneditor {
+            width: 1000px;
+            height: 600px;
+            padding: 0 10px;
+            border-spacing: 10px;
+        }
+
+        div#jsoneditor-top {
+            width: 1000px;
+            padding: 0 10px;
+            border-spacing: 10px;
+        }
+
+        .jsoneditor-top-inner {
+            background: #4b286d;
+            padding: 0 24px;
+        }
+
+            .jsoneditor-top-inner img {
+                width: 142px;
+                height: auto;
+            }
+
+        .btn {
+            cursor: pointer align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            background: none rgb(36, 135, 0);
+            transition: background 0.2s ease 0s;
+            border-width: 1px;
+            border-radius: 4px;
+            margin: 10px;
+            padding: 10px 2rem;
+            transition: 0.5s;
+        }
+
+            .btn:hover {
+                background-color: rgb(255, 255, 255);
+                color: rgb(36, 135, 0);
+                border-color: rgb(36, 135, 0);
+            }
+    </style>
+</head>
+<body>
+    <p>
+        <label for="jsonLabelEnv">Env Name:</label>
+        <input type="text" id="envId" name="envName" value="itn01" />
+        <label for="jsonLabel">Config File Name:</label>
+        <input type="text" id="jsonId" name="jsonName" value="config" />
+        <br />
+        <button id="setJSON" class="btn">Load JSON</button>
+        <button id="setValJSON" class="btn">Load Validations JSON</button>
+        <br>
+        <label id="jsonLabel1" for="jsonLabel1">Current JSON File Name:</label>
+        <label id="jsonLabelDisplay" for="jsonLabelDisplay"></label>
+        <br />
+        <div id="jsoneditor-top"><div class="jsoneditor-top-inner"><img src="../img/teluslogo.png"></div> </div>
+        <div id="jsoneditor"></div>
+        <button id="saveJSON" style="margin-left: 10px;" class="btn">Save JSON</button>
+    </p>
+
+    <script>
+        // create the editor
+        const container = document.getElementById('jsoneditor');
+        const options = {};
+        const editor = new JSONEditor(container, options);
+        var jsonLookup = null;
+		var qparam = null;
+
+		function loadJson(childLocToEnv){
+			jsonLookup = document.getElementById('jsonId');
+			envName = document.getElementById('envId');
+			if(childLocToEnv != null && childLocToEnv !== undefined){
+				childLocToEnv = "/" + childLocToEnv;
+			} else {
+				childLocToEnv = "/base";
+			}
+
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:3000/getdata/" + envName.value + childLocToEnv + "/" + jsonLookup.value,
+                    success: function (result) {
+                        const json = result;
+                        editor.set(JSON.parse(json));
+
+                        var jsonLabelD = document.getElementById('jsonLabelDisplay');
+                        jsonLabelD.innerHTML = jsonLookup.value;
+                        // for save ..so that if anyone changes the value in text field, we still have the right no.
+						qparam = envName.value + childLocToEnv + "/" + jsonLookup.value;
+                    },
+                    error: function (e) {
+                        // $("#getResultDiv").html("<strong>Error</strong>");
+                        alert("ERROR while getting data for " + jsonLookup.value + JSON.stringify(e));
+                        editor.set([]);
+
+                        var jsonLabelD = document.getElementById('jsonLabelDisplay');
+                        jsonLabelD.innerHTML = "";
+                    }
+                });
+            })
+		}
+
+		// set json
+        document.getElementById('setJSON').onclick = function () {
+            loadJson();
+        }
+
+        // set json
+        document.getElementById('setValJSON').onclick = function () {
+			loadJson("vals-meta");
+        }
+
+        // Save json
+        document.getElementById('saveJSON').onclick = function () {
+            const json = editor.get();
+            var jsonValue = JSON.stringify(json, null, 2);
+            if (jsonValue == null || jsonValue == "[]" || jsonValue == "{}") {
+                alert("No Action Required.");
+            } else {
+                var urlAddr = "http://localhost:3000/savedata/" + qparam;
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: urlAddr,
+                    data: jsonValue,
+                    contentType: 'application/json',
+                    success: function (result) {
+                        alert("Save Successful.");
+                    },
+                    error: function (e) {
+                        alert("Error while Saving.")
+                        console.log("ERROR: ", e);
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

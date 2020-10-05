@@ -1,0 +1,73 @@
+<Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ossj.org/xml/Common/v1-5">
+	<Header />
+	<Body>
+		<genericNCIntegrationOperation>
+			<item>
+				<CharacteristicValue>
+					<Value>
+						success
+					</Value>
+					<Characteristic>
+						status
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						1820002156
+					</Value>
+					<Characteristic>
+						Order Number
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						539459352A
+					</Value>
+					<Characteristic>
+						Tracking Number
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						09/10/2020
+					</Value>
+					<Characteristic>
+						Expected Delivery Date
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						9158257863013172781
+					</Value>
+					<Characteristic>
+						Purchase Order Number
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						CANADA POST
+					</Value>
+					<Characteristic>
+						Shipper
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						notifystatus
+					</Value>
+					<Characteristic>
+						operation name
+					</Characteristic>
+				</CharacteristicValue>
+				<CharacteristicValue>
+					<Value>
+						logistics
+					</Value>
+					<Characteristic>
+						notification type
+					</Characteristic>
+				</CharacteristicValue>
+			</item>
+		</genericNCIntegrationOperation>
+	</Body>
+</Envelope>

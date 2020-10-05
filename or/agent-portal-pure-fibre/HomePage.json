@@ -1,0 +1,116 @@
+{
+  "pagename": "HomePage",
+  "urlcontains": "home",
+  "elements": [
+    {
+      "identifier": "NewCustomer",
+      "meta": {
+        "type": "radio",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#btnNewCustomer .wiz-feature__caption",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ExistingCustomer",
+      "meta": {
+        "type": "radio",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#btnExistsCustomer .wiz-feature__caption",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "City",
+      "meta": {
+        "type": "text",
+        "id": "city",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CityLov",
+      "meta": {
+        "type": "link",
+        "id": "",
+        "xpath": "//input[@id='city']/following-sibling::ul/li[starts-with(@class,'suggest__item')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Province",
+      "meta": {
+        "type": "select",
+        "id": "",
+        "xpath": "//div[@id='province']/label",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProvinceLov",
+      "meta": {
+        "type": "options",
+        "id": "",
+        "xpath": "//div[@id='province']/ul/li",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressSearch",
+      "meta": {
+        "type": "text",
+        "id": "address",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressSearchLov",
+      "meta": {
+        "type": "options",
+        "id": "",
+        "xpath": "//div[@id='addressWrap']//a[starts-with(@class,'suggest__link')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "Button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#nextButton > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CheckButton",
+      "meta": {
+        "type": "Button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#save > span",
+        "linkText": ""
+      }
+    }
+  ]
+}

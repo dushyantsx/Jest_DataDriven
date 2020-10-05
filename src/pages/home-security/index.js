@@ -1,0 +1,17 @@
+module.exports.SsoLoginPage = require("../common/SsoLoginPage");
+module.exports.AccountPage = require("./AccountPage");
+module.exports.AppointmentPage = require("./AppointmentPage");
+module.exports.BillingInformationPage = require("./BillingInformationPage");
+module.exports.CheckoutPage = require("./CheckoutPage");
+module.exports.CreateCustomerPage = require("./CreateCustomerPage");
+module.exports.CreditApprovalPage = require("./CreditApprovalPage");
+module.exports.CsrDesktopPage = require("./CsrDesktopPage");
+module.exports.CustomizePage = require("./CustomizePage");
+module.exports.EmergencyContactPage = require("./EmergencyContactPage");
+module.exports.EquipmentPage = require("./EquipmentPage");
+module.exports.ManageServicesPage = require("./ManageServicesPage");
+module.exports.PermitPage = require("./PermitPage");
+module.exports.RulesPopup = require("./RulesPopup");
+module.exports.SelectServicesPage = require("./SelectServicesPage");
+module.exports.ShippingDetailsPage = require("./ShippingDetailsPage");
+module.exports.SubmitSuccessPage = require("./SubmitSuccessPage");

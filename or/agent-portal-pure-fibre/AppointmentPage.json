@@ -1,0 +1,248 @@
+{
+  "pagename": "AppointmentPage",
+  "urlcontains": "dateandtime|contact",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-caption__title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProjectCode",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".form-text__input.js-change_time_required",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LoadAvailableSlots",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js_reload_project_code.reload-time-slots > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CalendarPreviousMonthArrow",
+      "meta": {
+        "type": "i",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-calendar-main > .calendar__header > .js-calendar-previous-month",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CalendarNextMonthArrow",
+      "meta": {
+        "type": "i",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-calendar-main > .calendar__header > .js-calendar-next-month",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AvailableDatesCollection",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".calendar__body .calendar__body-td.js-day:not(._disabled)",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AvailableTimesCollection",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-time-slots-popup .calendar__body-td._time.js-time-slot:not(._disabled)",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContactName",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#contactName",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContactPhoneNumber",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#phoneNumber",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AdditionalAccessInformationForTechnician",
+      "meta": {
+        "type": "textarea",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".form-text__textarea.js-comments.js-contact-info",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@id='next']",
+        "className": "",
+        "css": ".button.cart__next-button.jsNextButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SelectedService",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='select-appointment spinner__container js-select-app _selected']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButtontop",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@id='next']/parent::div",
+        "className": "",
+        "css": "#next",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Rule4kPopupContinueWithOrder",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".popup-container > .popup-placeholder > .popup button.submit-btn",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CreateNewAppointment",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.select-appointment",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Service",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='select-appointment__description-date-text']",
+        "className": "",
+        "css": ".select-appointment__description-date-text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@class='button button-wider color-green js-confirm-appointment']",
+        "className": "",
+        "css": "button button-wider color-green js-confirm-appointment",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SWTDuration",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#appointment-time",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Appointment Date",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='calendar__popup-header-date']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DisplayedService",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='select-appointment__description-date']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CreateButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[text()='Create']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DateLoading",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='calendar__body-td js-day _disabled  _loading']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "pagename": "AccountPage",
+  "urlcontains": "my_account",
+  "elements": [
+    {
+      "identifier": "MoveButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[contains(text(),'Move Services')]",
+        "className": "",
+        "css": "button[style]",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MovePopUp",
+      "meta": {
+        "type": "popup",
+        "id": "",
+        "xpath": "",
+        "className": "popup _move-services",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressList",
+      "meta": {
+        "type": "popup",
+        "id": "",
+        "xpath": "//div[@class='location__list']",
+        "className": "p",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".db-header._title h2",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MyServicesTab",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//*[contains(@class,'js_tabs_link') and text()='My Services']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContactInformationTab",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//*[contains(@class,'js_tabs_link') and text()='Contact Information']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ManageServiceStatusTab",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//*[contains(@class,'js_tabs_link') and text()='Manage Service Status']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressList",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[contains(@class,'location__item js_location')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressesButton",
+      "meta": {
+        "type": "address",
+        "id": "userLocation",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddLocation",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@class='button color-transparent button-width-tds mobile-full-width js-add-location']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddLocationPopUp",
+      "meta": {
+        "type": "popup",
+        "id": "loginPopup",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CityField",
+      "meta": {
+        "type": "textfield",
+        "id": "",
+        "xpath": "//div[@id='cityContainer']/input",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CityFieldlov",
+      "meta": {
+        "type": "textfield",
+        "id": "",
+        "xpath": "//input[@id='city']/following-sibling::ul/li[starts-with(@class,'suggest__item')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressField",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "//input[@id='address']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressFieldlov",
+      "meta": {
+        "type": "textfield",
+        "id": "",
+        "xpath": "//input[@id='address']/following-sibling::ul/li[starts-with(@class,'suggest__item ui-menu-item')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddAddressButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(text(),'Add address')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AvailableServicesNamesCollection",
+      "meta": {
+        "type": "",
+        "id": "",
+        "xpath": "//h3[@class='service__name']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OrderNowButtonForProvidedServiceText",
+      "meta": {
+        "type": "",
+        "id": "",
+        "xpath": "//h3[@class='service__name' and contains(.,'$$TEXT$$')]/ancestor::div[contains(@class,'service__header _single')]//a[contains(text(),'Order Now')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServicePlanActiveStatus",
+      "meta": {
+        "type": "",
+        "id": "",
+        "xpath": "//div[text()='#DYN_DATA#']/../..//span[@id='activeServiceStatus']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ManageServicesLink",
+      "meta": {
+        "type": "",
+        "id": "",
+        "xpath": "//li[@id='tabItem']/a[contains(text(),'Manage Service Status')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Add Location",
+      "meta": {
+        "type": "",
+        "id": "",
+        "xpath": "//button[contains(@class,'js-add-location')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Spinner",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='spinner _spinning _fill-container']",
+        "className": "",
+        "css": "svg.spinner__svg",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ManageMyOrderTab",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//a[text()='Manage My Order']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "InvalidAddressMessage",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".form-text__message-text",
+        "linkText": ""
+      }
+    }
+  ]
+}

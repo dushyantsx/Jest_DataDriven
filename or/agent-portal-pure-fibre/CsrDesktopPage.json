@@ -1,0 +1,358 @@
+{
+  "pagename": "CsrDesktopPage",
+  "urlcontains": "csr-desktop",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".search__header",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddNewCustomer",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#linkAddNewCusts",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CheckAddress",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#linkCheckAddress",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "BusinessLegalName",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#business-legal-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EnterpriseCustomerId",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#enterprise-customer-id",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "FirstName",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#firstNameTxt",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LastName",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#lastNameTxt",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Email",
+      "meta": {
+        "type": "email",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#csrEmailText",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ContactPhoneNo",
+      "meta": {
+        "type": "tel",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#csrEmailPhoneNum",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "City",
+      "meta": {
+        "type": "text",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#city",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CityLov",
+      "meta": {
+        "type": "link",
+        "id": "",
+        "xpath": "//input[@id='city']/following-sibling::ul/li[starts-with(@class,'suggest__item')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Province",
+      "meta": {
+        "type": "select",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#select-province-button.ui-selectmenu-button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProvinceLov",
+      "meta": {
+        "type": "options",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "#select-province-menu > .ui-menu-item",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressSearch",
+      "meta": {
+        "type": "text",
+        "id": "address",
+        "xpath": "",
+        "className": "",
+        "css": "#address",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddressSearchLov",
+      "meta": {
+        "type": "options",
+        "id": "",
+        "xpath": "//div[@class='search__line']//ul[contains(@class,'ui-menu')]//a[@class='suggest__link']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchButton",
+      "meta": {
+        "type": "button",
+        "id": "viewSearcPortButton",
+        "xpath": "",
+        "className": "",
+        "css": "#viewSearcPortButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ClearAll",
+      "meta": {
+        "type": "link",
+        "id": "LinksClearAll",
+        "xpath": "",
+        "className": "",
+        "css": "#LinksClearAll",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCard",
+      "meta": {
+        "type": "div",
+        "id": "csrSearchShortMiddle",
+        "xpath": "",
+        "className": "",
+        "css": "#csrSearchShortMiddle",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardServicesLink",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@id='cactAsCustomerServicesURL']/span",
+        "className": "",
+        "css": "#cactAsCustomerServicesURL > .search-button__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardOpenQuoteLink",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(.,'Open quote')]",
+        "className": "",
+        "css": "#cactAsCustomerURLBut > .search-button__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardAddHomePhoneLink",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(.,'Add Home Phone')]",
+        "className": "",
+        "css": "#caddHomePhoneURLButt > .search-button__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardBookAppointmentLink",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(.,'Book Appointment')]",
+        "className": "",
+        "css": "#cbookAppointmentURLButt > .search-button__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardManageDiscountsLink",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(.,'Manage Discounts')]",
+        "className": "",
+        "css": "#manualDiscountsButton > .search-button__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardViewCreditLink",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(.,'View Credit')]",
+        "className": "",
+        "css": ".jsCreditCheck > .search-button__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchResultFirstCardAddLocation",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[contains(.,'Add Location')]",
+        "className": "",
+        "css": ".js-desktop-add-location",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ClearAll",
+      "meta": {
+        "type": "link",
+        "id": "LinksClearAll",
+        "xpath": "",
+        "className": "",
+        "css": "#LinksClearAll",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CityRadio",
+      "meta": {
+        "type": "radiobutton",
+        "id": "",
+        "xpath": "//div[contains(text(),'$$TEXT$$')]/preceding-sibling::div//i[@class='wiz-radio__icon _csr']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AvailableCities",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@data-name='city']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Override",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@id='overrideButton']",
+        "className": "",
+        "css": "#overrideButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CustomerName",
+      "meta": {
+        "type": "button",
+        "id": "customerName",
+        "xpath": "",
+        "className": "",
+        "css": "#customerName",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "UserDropDownOptions",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//ul[@id='headerUserMenuList']//a",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewAllLocations",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='search__block-button-show js-button-show-all-locations ']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

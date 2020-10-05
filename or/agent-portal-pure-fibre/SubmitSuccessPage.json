@@ -1,0 +1,105 @@
+{
+  "pagename": "SubmitSuccessPage",
+  "urlcontains": "submit-success",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".order-result__header-title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "OrderNumber",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".order-result__content-description-item-title-order",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "RefreshToGetAccountNumber",
+      "meta": {
+        "type": "i",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".order-result__content-description-item-refresh.js-refresh-ban",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AccountNumber",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".order-result__content-description-item-number > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PrintThisPageButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".js-print_webpage",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DownloadOrderSummaryPdf",
+      "meta": {
+        "type": "i",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".order-result__content-link-icon._download",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewMyOrder",
+      "meta": {
+        "type": "i",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".order-result__content-link-arrow.iconChevron",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Complete",
+      "meta": {
+        "type": "link",
+        "id": "",
+        "xpath": "//a[@id='csrNotLinkCom']",
+        "className": "",
+        "css": "#csrNotLinkCom",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewMyOrder",
+      "meta": {
+        "type": "link",
+        "id": "",
+        "xpath": "//div[@class='order-result__content-links-item']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

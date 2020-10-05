@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "7baa025e-318d-47b9-b35d-347f3d2e20f6",
+		"name": "BTAPI (Portal SImulation)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AssignShoppingCartToCustomer",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APP_CIIAUTHSDF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"relatedParty\": [\r\n        {\r\n          \"id\": \"500664700\",\r\n          \"role\": \"customer\",\r\n          \"characteristic\": [\r\n            {\r\n              \"name\": \"category\",\r\n              \"value\": \"9134661890013196039\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"channel\": {\r\n        \"id\": \"9144413504413358531\",\r\n        \"name\": \"CSR\"\r\n      },\r\n      \"place\": {\r\n        \"id\": \"2990852\"\r\n      },\r\n      \"cartItem\": [\r\n        {\r\n          \"action\": \"Add\",\r\n          \"productOffering\": {\r\n            \"id\": \"9150435884313194594\"\r\n          }\r\n        },\r\n        {\r\n          \"action\": \"Add\",\r\n          \"productOffering\": {\r\n            \"id\": \"9150400880613177266\"\r\n          }\r\n        },\r\n        {\r\n          \"action\": \"Add\",\r\n          \"productOffering\": {\r\n            \"id\": \"9150434176413193748\"\r\n          }\r\n        }\r\n      ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-kidc-it01.tsl.telus.com/cmo/ordermgmt/tmf-api/shoppingCart/v1/shoppingCart/",
+					"protocol": "https",
+					"host": [
+						"soa-mp-kidc-it01",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"cmo",
+						"ordermgmt",
+						"tmf-api",
+						"shoppingCart",
+						"v1",
+						"shoppingCart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCustomerAPI",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APP_CIIAUTHSDF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"relatedParty\": [\r\n        {\r\n          \"role\": \"customer\",\r\n          \"characteristic\": [\r\n            {\r\n              \"name\": \"category\",\r\n              \"value\": \"9134661890013196039\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"cartItem\": [\r\n        {\r\n          \"action\": \"Add\",\r\n          \"productOffering\": {\r\n            \"id\": \"9151911819413302414\"\r\n          },\r\n          \"cartItemRelationship\": [{\r\n            \"id\": \"1\",\r\n            \"type\": \"parent\"\r\n          }]\r\n        },\r\n        {\r\n          \"action\": \"Add\",\r\n          \"productOffering\": {\r\n            \"id\": \"9151911810013302386\"\r\n          },\r\n          \"cartItemRelationship\": [{\r\n            \"id\": \"1\",\r\n            \"type\": \"parent\"\r\n          }]\r\n        }\r\n      ],\r\n      \"channel\": {\r\n        \"id\": \"9144413504413358531\",\r\n        \"name\": \"CSR\"\r\n      },\r\n      \"place\": {\r\n        \"id\": \"2990852\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-kidc-it01.tsl.telus.com/cmo/ordermgmt/tmf-api/shoppingCart/v1/shoppingCart/c83c2200-babc-4f03-a9bd-9c017aac7602",
+					"protocol": "https",
+					"host": [
+						"soa-mp-kidc-it01",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"cmo",
+						"ordermgmt",
+						"tmf-api",
+						"shoppingCart",
+						"v1",
+						"shoppingCart",
+						"c83c2200-babc-4f03-a9bd-9c017aac7602"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCustomerAPI(Set WO Characteristic Values)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APP_CIIAUTHSDF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"relatedParty\": [{\r\n        \"role\": \"customer\",\r\n        \"characteristic\": [{\r\n          \"name\": \"category\",\r\n          \"value\": \"9134661890013196039\"\r\n        }]\r\n      }],\r\n      \"place\": {\r\n        \"id\": \"2990852\"\r\n      },\r\n      \"characteristic\": [\r\n        {\r\n          \"name\": \"9151790559313390133\",\r\n          \"value\": null\r\n        },\r\n        {\r\n          \"name\": \"9151790559313390189\",\r\n          \"value\": null\r\n        }\r\n      ],\r\n      \"channel\": {\r\n        \"id\": \"9144413504413358531\",\r\n        \"name\": \"CSR\"\r\n      },\r\n      \"cartItem\": [\r\n        {\r\n          \"action\": \"Add\",\r\n          \"id\": \"18\",\r\n          \"product\": {\r\n            \"characteristic\": [\r\n              {\r\n                \"name\": \"9152694600113929802\",\r\n                \"value\": \"Test Additional Information for Technician!!!\"\r\n              },\r\n              {\r\n                \"name\": \"9146583488613682622\",\r\n                \"value\": \"Test Contact Name\"\r\n              },\r\n              {\r\n                \"name\": \"9146583560513682624\",\r\n                \"value\": \"6042202121\"\r\n              },\r\n              {\r\n                \"name\": \"9146584385713682940\",\r\n                \"value\": \"1555527600000\"\r\n              },\r\n              {\r\n                \"name\": \"9146584120013682838\",\r\n                \"value\": \"1555538400000\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-kidc-it01.tsl.telus.com/cmo/ordermgmt/tmf-api/shoppingCart/v1/shoppingCart/c83c2200-babc-4f03-a9bd-9c017aac7602?Content-Type=application/json",
+					"protocol": "https",
+					"host": [
+						"soa-mp-kidc-it01",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"cmo",
+						"ordermgmt",
+						"tmf-api",
+						"shoppingCart",
+						"v1",
+						"shoppingCart",
+						"c83c2200-babc-4f03-a9bd-9c017aac7602"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCustomerAPI(Set Previuos Provider) Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APP_CIIAUTHSDF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"relatedParty\": [{\r\n        \"role\": \"customer\",\r\n        \"characteristic\": [{\r\n          \"name\": \"category\",\r\n          \"value\": \"9134661890013196039\"\r\n        }]\r\n      }],\r\n      \"place\": {\r\n        \"id\": \"2990852\"\r\n      },\r\n      \"characteristic\": [\r\n        {\r\n          \"name\": \"9151790559313390133\",\r\n          \"value\": null\r\n        },\r\n        {\r\n          \"name\": \"9151790559313390189\",\r\n          \"value\": null\r\n        }\r\n      ],\r\n      \"channel\": {\r\n        \"id\": \"9144413504413358531\",\r\n        \"name\": \"CSR\"\r\n      },\r\n      \"cartItem\": [\r\n        {\r\n          \"action\": \"Add\",\r\n          \"id\": \"1\",\r\n          \"product\": {\r\n            \"characteristic\": [\r\n              {\r\n                \"name\": \"9152694600113929802\",\r\n                \"value\": \"9152694600113929804\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-kidc-it01.tsl.telus.com/cmo/ordermgmt/tmf-api/shoppingCart/v1/shoppingCart/c83c2200-babc-4f03-a9bd-9c017aac7602",
+					"protocol": "https",
+					"host": [
+						"soa-mp-kidc-it01",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"cmo",
+						"ordermgmt",
+						"tmf-api",
+						"shoppingCart",
+						"v1",
+						"shoppingCart",
+						"c83c2200-babc-4f03-a9bd-9c017aac7602"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidateShoppoingCartAPI",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APP_CIIAUTHSDF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"relatedParty\": [\r\n        {\r\n          \"role\": \"customer\",\r\n          \"characteristic\": [\r\n            {\r\n              \"name\": \"category\",\r\n              \"value\": \"9134661890013196039\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"channel\": {\r\n        \"id\": \"9144413504413358531\",\r\n        \"name\": \"CSR\"\r\n      }\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-kidc-it01.tsl.telus.com/cmo/ordermgmt/tmf-api/shoppingCart/v1/shoppingCart/c83c2200-babc-4f03-a9bd-9c017aac7602/validate",
+					"protocol": "https",
+					"host": [
+						"soa-mp-kidc-it01",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"cmo",
+						"ordermgmt",
+						"tmf-api",
+						"shoppingCart",
+						"v1",
+						"shoppingCart",
+						"c83c2200-babc-4f03-a9bd-9c017aac7602",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SubmitShoppoingCartAPI",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "APP_CIIAUTHSDF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"relatedParty\": [\r\n        {\r\n          \"role\": \"customer\",\r\n          \"characteristic\": [\r\n            {\r\n              \"name\": \"category\",\r\n              \"value\": \"9134661890013196039\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"channel\": {\r\n        \"id\": \"9144413504413358531\",\r\n        \"name\": \"CSR\"\r\n      } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-kidc-it01.tsl.telus.com/cmo/ordermgmt/tmf-api/shoppingCart/v1/shoppingCart/c83c2200-babc-4f03-a9bd-9c017aac7602/checkout",
+					"protocol": "https",
+					"host": [
+						"soa-mp-kidc-it01",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"cmo",
+						"ordermgmt",
+						"tmf-api",
+						"shoppingCart",
+						"v1",
+						"shoppingCart",
+						"c83c2200-babc-4f03-a9bd-9c017aac7602",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCustomerAPI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en_CA"
+					},
+					{
+						"key": "EligibilityParams",
+						"value": "distributionChannelId=\"9144413504413358534\",marketId=\"9144895345813029048\",customerCategoryId=\"9134661890013196039\""
+					},
+					{
+						"key": "Range",
+						"value": "1-10000"
+					},
+					{
+						"key": "Correlation-Id",
+						"value": "TEST_NAME_UNDEFINED"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"name\": \"Jest Autotest\",\r\n      \"externalLocationId\": \"2990852\",\r\n      \"emai\": \"herest@telus.com\",\r\n      \"phoneNumber\": \"7781234567\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://btln002741.corp.ads:60052/api/v1/customerManagement",
+					"protocol": "http",
+					"host": [
+						"btln002741",
+						"corp",
+						"ads"
+					],
+					"port": "60052",
+					"path": [
+						"api",
+						"v1",
+						"customerManagement"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

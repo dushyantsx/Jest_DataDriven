@@ -1,0 +1,43 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <ns1:searchAvailableAppointmentList xmlns:ns1="http://xmlschema.tmi.telus.com/srv/RMO/ProcessMgmt/FieldWorkAppointmentServiceRequestResponse_v3" xmlns:ns3="http://xmlschema.tmi.telus.com/xsd/Enterprise/BaseTypes/EnterpriseCommonTypes_v9">
+            <ns1:inputHeader>
+                <systemSourceCd>13574</systemSourceCd>
+                <userId>Falcon</userId>
+                <requestDate>#startDate#T00:00:00.005Z</requestDate>
+            </ns1:inputHeader>
+            <ns1:workOrder>
+                <originatingSystemId>13574</originatingSystemId>
+                <classificationCd>ORDER</classificationCd>
+                <serviceClassCd>R</serviceClassCd>
+                <productCategoryCd>MASS_MARKET</productCategoryCd>
+                <jobTypeCd>MASS_MARKET</jobTypeCd>
+                <location>
+                    <locationList>
+                        <typeCode>SERVICE</typeCode>
+                        <dispatchLocationInd>true</dispatchLocationInd>
+                        <locationAddress>
+                            <locationId>#locationId#</locationId>
+                        </locationAddress>
+                    </locationList>
+                </location>
+                <componentList>
+                    <component>
+                        <productCategoryCd>SECURITY</productCategoryCd>
+                        <jobTypeCd>SECURITY</jobTypeCd>
+                        <workOrderActionCd>PR</workOrderActionCd>
+                        <productTechnologyCd>OTT</productTechnologyCd>
+                        <installationTypeCd>FW</installationTypeCd>
+                        <estimatedDurationNum>6.5</estimatedDurationNum>
+                        <estimatedDurationUnitCd>HOURS</estimatedDurationUnitCd>
+                    </component>
+                </componentList>
+            </ns1:workOrder>
+            <ns1:appointmentProfileName/>
+            <ns1:startDate>#startDate#T00:00:00.000Z</ns1:startDate>
+            <ns1:endDate>#endDate#T23:59:59.998Z</ns1:endDate>
+            <ns1:gradeAppointmentInd>false</ns1:gradeAppointmentInd>
+            <ns1:fullSearchInd>false</ns1:fullSearchInd>
+        </ns1:searchAvailableAppointmentList>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,507 @@
+<ns2:workOrderUpdateNotification xmlns:ns2="http://xmlschema.tmi.telus.com/xsd/Resource/Resource/WorkForceManagementOrderTypes_v3">
+  <eventList>
+    <!--<event>JOB_STATUS_UPDATE_EVENT</event>
+    <event>TECHNICIAN_REMARK_EVENT</event>
+    <event>COMPONENT_COMPLETE_EVENT</event> -->
+    <event>WORKORDER_COMPLETE_EVENT</event>
+  </eventList>
+  <systemSourceCd>7820</systemSourceCd>
+  <userId>X173446</userId>
+  <requestDate>2017-03-03T21:42:54.38Z</requestDate>
+  <workOrder>
+    <workOrderId>#workOrderId#</workOrderId>
+    <originatingSystemId>13574</originatingSystemId>
+    <originatingSystemWorkOrderId>0002807839</originatingSystemWorkOrderId>
+    <originatingSystemWorkOrderInternalId>9147146608813348478</originatingSystemWorkOrderInternalId>
+    <callId>#workOrderId#</callId>
+    <classificationCd>ORDER</classificationCd>
+    <serviceClassCd>R</serviceClassCd>
+    <productCategoryCd>MASS_MARKET</productCategoryCd>
+    <productTechnologyCd>GPON</productTechnologyCd>
+    <jobTypeCd>MASS_MARKET</jobTypeCd>
+    <outofServiceInd>false</outofServiceInd>
+    <priorityCd>9</priorityCd>
+    <serviceIdentification>
+      <typeCd>ACCOUNT</typeCd>
+      <descriptionTxt>210618</descriptionTxt>
+    </serviceIdentification>
+    <hostReadyForDispatchInd>true</hostReadyForDispatchInd>
+    <overrideInd>false</overrideInd>
+    <scheduleRemarkInd>false</scheduleRemarkInd>
+    <appointmentStartDate>2017-03-10T15:00:00.000Z</appointmentStartDate>
+    <appointmentEndDate>2017-03-10T16:00:00.000Z</appointmentEndDate>
+    <dueDate>2017-03-10T16:00:00.000Z</dueDate>
+    <estimatedDurationNum>4.0</estimatedDurationNum>
+    <estimatedDurationUnitCd>HOURS</estimatedDurationUnitCd>
+    <location>
+      <locationList>
+        <locationId>397051</locationId>
+        <typeCode>SERVICE</typeCode>
+        <dispatchLocationInd>true</dispatchLocationInd>
+        <locationAddress>
+          <locationId>397051</locationId>
+          <civicAddress>
+            <civicNumber>19</civicNumber>
+            <streetName>34 66 14 W4</streetName>
+            <municipalityCode>LAC LA BICHE</municipalityCode>
+            <provinceStateCode>AB</provinceStateCode>
+            <countryName>CANADA</countryName>
+            <postalCode>T0A2C0</postalCode>
+          </civicAddress>
+          <geocodeAddress>
+            <matchCode>High</matchCode>
+            <latitudeTxt>54.751083</latitudeTxt>
+            <longitudeTxt>-112.02863</longitudeTxt>
+          </geocodeAddress>
+          <regionHierarchy>
+            <provinceCode>AB</provinceCode>
+            <provinceName>Alberta</provinceName>
+            <provinceLocationId>100000</provinceLocationId>
+            <regionName>780 East - Lac La Biche</regionName>
+            <regionLocationId>12002281</regionLocationId>
+            <districtName>Lac La Biche</districtName>
+            <districtLocationId>100314</districtLocationId>
+            <serviceAreaName>Lac La Biche</serviceAreaName>
+            <serviceAreaClliCd>LBCHAB01</serviceAreaClliCd>
+            <serviceAreaLocationId>100913</serviceAreaLocationId>
+          </regionHierarchy>
+        </locationAddress>
+      </locationList>
+      <timezoneCd>America/Edmonton</timezoneCd>
+      <regionHierarchy>
+        <provinceCode>AB</provinceCode>
+        <provinceName>Alberta</provinceName>
+        <regionName>780 East - Lac La Biche</regionName>
+        <districtName>Lac La Biche</districtName>
+        <serviceAreaName>Lac La Biche</serviceAreaName>
+        <serviceAreaClliCd>LBCHAB01</serviceAreaClliCd>
+        <serviceAreaLocationId>100913</serviceAreaLocationId>
+      </regionHierarchy>
+    </location>
+    <customerName>ATSmoke54149822 ATSmoke</customerName>
+    <customerTypeCd>CUSTOMER</customerTypeCd>
+    <contactList>
+      <name>ATSmoke54149822 ATSmoke</name>
+      <typeCd>CLT</typeCd>
+      <phoneNumber>undefined</phoneNumber>
+      <phoneLocationCd>AUT</phoneLocationCd>
+    </contactList>
+    <contactList>
+      <name>NetCracker TA</name>
+      <typeCd>CBR</typeCd>
+      <phoneNumber>1234567890</phoneNumber>
+      <phoneLocationCd>AUT</phoneLocationCd>
+    </contactList>
+    <customerId>210618</customerId>
+    <customerIdTypeCd>ACCOUNT</customerIdTypeCd>
+    <originatingSystemCreateDate>2017-03-03T21:24:27.000Z</originatingSystemCreateDate>
+    <workOrderAttributeList>
+      <typeCode>
+        <typeCd>NOTIFICATION_IND</typeCd>
+        <descriptionTxt>true</descriptionTxt>
+      </typeCode>
+    </workOrderAttributeList>
+    <workOrderDetailList/>
+    <remarkList>
+      <typeCode>
+        <typeCd>GENERAL</typeCd>
+        <descriptionTxt>undefined</descriptionTxt>
+      </typeCode>
+      <typeCode>
+        <typeCd>FOR_TECHNICIAN</typeCd>
+        <descriptionTxt>
+          <tables>
+            <table>
+              <caption>Customer Information : Customer Information</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Contact Numbers</th>
+                  <th>Email</th>
+                  <th>Business Operating Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ATSmoke54149822 ATSmoke</td>
+                  <td/>
+                  <td>atsmoke54149822@telus.com</td>
+                  <td/>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <caption>Customer Information : Account Type</caption>
+              <thead>
+                <tr>
+                  <th>Business Or Consumer Account</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Consumer</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <caption>Customer Information : Product Information</caption>
+              <thead>
+                <tr>
+                  <th>Ordered Product</th>
+                  <th>Existing Products</th>
+                  <th>All Products</th>
+                  <th>Additional Comments</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td/>
+                  <td/>
+                  <td>Work Offer, Essentials, Home Phone, TELUS Internet 25/25</td>
+                  <td/>
+                  <td/>
+                </tr>
+              </tbody>
+            </table>
+          </tables>
+        </descriptionTxt>
+      </typeCode>
+    </remarkList>
+    <internalTeamWorkerRequiredInd>false</internalTeamWorkerRequiredInd>
+    <requiredTeamWorkerList/>
+    <prohibitedTeamWorkerList/>
+    <preferredTeamWorkerList/>
+    <requiredSkillList>
+      <requiredSkill>
+        <name>GPON</name>
+        <levelNum>3.0</levelNum>
+      </requiredSkill>
+    </requiredSkillList>
+    <statusCd>COMPLETE</statusCd>
+    <requiredTeamWorkerNum>1</requiredTeamWorkerNum>
+    <customerPremiseEquipmentList/>
+    <componentList>
+      <component>
+        <componentId>13746</componentId>
+        <originatingSystemWorkOrderId>9147146607013348295</originatingSystemWorkOrderId>
+        <hostReadyForDispatchInd>false</hostReadyForDispatchInd>
+        <productCategoryCd>TTV</productCategoryCd>
+        <jobTypeCd>IPTV</jobTypeCd>
+        <workOrderActionCd>PR</workOrderActionCd>
+        <productTechnologyCd>GPON</productTechnologyCd>
+        <installationTypeCd>FW</installationTypeCd>
+        <estimatedDurationNum>2.0</estimatedDurationNum>
+        <estimatedDurationUnitCd>HOURS</estimatedDurationUnitCd>
+        <componentAttributeList>
+          <typeCode>
+            <typeCd>SUBDEMANDTYPE</typeCd>
+            <descriptionTxt>INSTALL</descriptionTxt>
+          </typeCode>
+          <typeCode>
+            <typeCd>PRIORITY</typeCd>
+            <descriptionTxt>9</descriptionTxt>
+          </typeCode>
+        </componentAttributeList>
+        <componentDetailList/>
+        <remarkList>
+          <typeCode>
+            <typeCd>FOR_TECHNICIAN</typeCd>
+            <descriptionTxt>
+              <tables>
+                <table>
+                  <caption>Optik TV : Order Information</caption>
+                  <thead>
+                    <tr>
+                      <th>Order</th>
+                      <th>Order Action</th>
+                      <th>TV Product name</th>
+                      <th>Class of Service</th>
+                      <th>Number of TV's</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0002807839</td>
+                      <td>PR</td>
+                      <td>Essentials</td>
+                      <td>R</td>
+                      <td>2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>Optik TV : Components</caption>
+                  <thead>
+                    <tr>
+                      <th>Theme Packs</th>
+                      <th>Premium Packs and Channels</th>
+                      <th>Add-ons</th>
+                      <th>Other channels/packs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Explore</td>
+                      <td/>
+                      <td>Musicroom, Stingray Ambiance 4K, Stingray</td>
+                      <td>Essentials</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>Optik TV : Customer Comments</caption>
+                  <thead>
+                    <tr>
+                      <th>Customer Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td/>
+                    </tr>
+                  </tbody>
+                </table>
+              </tables>
+            </descriptionTxt>
+          </typeCode>
+        </remarkList>
+        <statusCd>COMPLETE</statusCd>
+      </component>
+      <component>
+        <componentId>13745</componentId>
+        <originatingSystemWorkOrderId>9147146607013348294</originatingSystemWorkOrderId>
+        <hostReadyForDispatchInd>false</hostReadyForDispatchInd>
+        <productCategoryCd>DSL</productCategoryCd>
+        <jobTypeCd>HS</jobTypeCd>
+        <workOrderActionCd>PR</workOrderActionCd>
+        <productTechnologyCd>GPON</productTechnologyCd>
+        <installationTypeCd>FW</installationTypeCd>
+        <estimatedDurationNum>1.0</estimatedDurationNum>
+        <estimatedDurationUnitCd>HOURS</estimatedDurationUnitCd>
+        <componentAttributeList>
+          <typeCode>
+            <typeCd>SUBDEMANDTYPE</typeCd>
+            <descriptionTxt>INSTALL</descriptionTxt>
+          </typeCode>
+          <typeCode>
+            <typeCd>PRIORITY</typeCd>
+            <descriptionTxt>14</descriptionTxt>
+          </typeCode>
+        </componentAttributeList>
+        <componentDetailList/>
+        <remarkList>
+          <typeCode>
+            <typeCd>FOR_TECHNICIAN</typeCd>
+            <descriptionTxt>
+              <tables>
+                <table>
+                  <caption>TELUS Internet : Order Information</caption>
+                  <thead>
+                    <tr>
+                      <th>Order Number</th>
+                      <th>Order Action</th>
+                      <th>Internet Product name</th>
+                      <th>Class of Service</th>
+                      <th>Number of Static IP's</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0002807839</td>
+                      <td>PR</td>
+                      <td>TELUS Internet 25/25</td>
+                      <td>R</td>
+                      <td/>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>TELUS Internet : Components</caption>
+                  <thead>
+                    <tr>
+                      <th>Security and Cloud Add Ons</th>
+                      <th>Smart Hub</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td/>
+                      <td>No</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>TELUS Internet : Customer Comments</caption>
+                  <thead>
+                    <tr>
+                      <th>Customer Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td/>
+                    </tr>
+                  </tbody>
+                </table>
+              </tables>
+            </descriptionTxt>
+          </typeCode>
+        </remarkList>
+        <statusCd>COMPLETE</statusCd>
+      </component>
+      <component>
+        <componentId>13744</componentId>
+        <originatingSystemWorkOrderId>9147146607013348293</originatingSystemWorkOrderId>
+        <hostReadyForDispatchInd>false</hostReadyForDispatchInd>
+        <productCategoryCd>POTS</productCategoryCd>
+        <jobTypeCd>VOICE</jobTypeCd>
+        <workOrderActionCd>PR</workOrderActionCd>
+        <productTechnologyCd>GPON</productTechnologyCd>
+        <installationTypeCd>FW</installationTypeCd>
+        <estimatedDurationNum>1.0</estimatedDurationNum>
+        <estimatedDurationUnitCd>HOURS</estimatedDurationUnitCd>
+        <componentAttributeList>
+          <typeCode>
+            <typeCd>SUBDEMANDTYPE</typeCd>
+            <descriptionTxt>INSTALL</descriptionTxt>
+          </typeCode>
+          <typeCode>
+            <typeCd>PRIORITY</typeCd>
+            <descriptionTxt>15</descriptionTxt>
+          </typeCode>
+        </componentAttributeList>
+        <componentDetailList/>
+        <remarkList>
+          <typeCode>
+            <typeCd>FOR_TECHNICIAN</typeCd>
+            <descriptionTxt>
+              <tables>
+                <table>
+                  <caption>Home Phone : Order Information</caption>
+                  <thead>
+                    <tr>
+                      <th>Order Number</th>
+                      <th>Order Action</th>
+                      <th>Phone Product name</th>
+                      <th>Class of Service</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0002807839</td>
+                      <td>PR</td>
+                      <td>Home Phone</td>
+                      <td>R</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>Home Phone : Product Details</caption>
+                  <thead>
+                    <tr>
+                      <th>Calling Features</th>
+                      <th>Long Distance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>3 Way Calling, Call Display, Call Forwarding, Call Return, Call Screen, Call Waiting, Name Display, Voice Mail</td>
+                      <td>No</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>Home Phone : Phone Numbers</caption>
+                  <thead>
+                    <tr>
+                      <th>Main Number</th>
+                      <th>New or Migrate</th>
+                      <th>Smart Ring Number</th>
+                      <th>Smart Ring - New or Migrate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td/>
+                      <td>New</td>
+                      <td/>
+                      <td/>
+                    </tr>
+                  </tbody>
+                </table>
+                <table>
+                  <caption>Home Phone : Customer Comments</caption>
+                  <thead>
+                    <tr>
+                      <th>Customer Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td/>
+                    </tr>
+                  </tbody>
+                </table>
+              </tables>
+            </descriptionTxt>
+          </typeCode>
+        </remarkList>
+        <statusCd>COMPLETE</statusCd>
+      </component>
+    </componentList>
+  </workOrder>
+  <job>
+    <jobIdent>
+      <jobId>318572</jobId>
+    </jobIdent>
+    <statusCd>COMPLETE</statusCd>
+    <assignment>
+      <teamWorkerId>X105642</teamWorkerId>
+      <statusCd>COMPLETE</statusCd>
+      <startDate>2017-03-10T15:08:00.000Z</startDate>
+      <endDate>2017-03-10T19:08:00.000Z</endDate>
+      <execution>
+        <arrivalDate>2017-03-03T21:35:00.000Z</arrivalDate>
+        <jobStartDate>2017-03-03T21:28:00.000Z</jobStartDate>
+        <serialNumberList/>
+        <remarkTxt/>
+        <executionDate>2017-03-03T21:40:00.000Z</executionDate>
+      </execution>
+    </assignment>
+    <componentList>
+      <component>
+        <componentId>13744</componentId>
+        <originatingSystemWorkOrderId>9147146607013348293</originatingSystemWorkOrderId>
+        <statusCd>COMPLETE</statusCd>
+      </component>
+      <component>
+        <componentId>13745</componentId>
+        <originatingSystemWorkOrderId>9147146607013348294</originatingSystemWorkOrderId>
+        <statusCd>COMPLETE</statusCd>
+      </component>
+      <component>
+        <componentId>13746</componentId>
+        <originatingSystemWorkOrderId>9147146607013348295</originatingSystemWorkOrderId>
+        <statusCd>COMPLETE</statusCd>
+      </component>
+    </componentList>
+  </job>
+  <componentList>
+    <component>
+      <componentId>13744</componentId>
+      <originatingSystemWorkOrderId>9147146607013348293</originatingSystemWorkOrderId>
+      <statusCd>COMPLETE</statusCd>
+    </component>
+    <component>
+      <componentId>13745</componentId>
+      <originatingSystemWorkOrderId>9147146607013348294</originatingSystemWorkOrderId>
+      <statusCd>COMPLETE</statusCd>
+    </component>
+    <component>
+      <componentId>13746</componentId>
+      <originatingSystemWorkOrderId>9147146607013348295</originatingSystemWorkOrderId>
+      <statusCd>COMPLETE</statusCd>
+    </component>
+  </componentList>
+</ns2:workOrderUpdateNotification>

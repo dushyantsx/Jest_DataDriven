@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fiel="http://xmlschema.tmi.telus.com/srv/RMO/ProcessMgmt/FieldWorkAssignmentMgmtServiceRequestResponse_v3">
+   <soapenv:Header />
+   <soapenv:Body>
+      <fiel:getWorkOrder>
+         <fiel:inputHeader>
+            <systemSourceCd>7820</systemSourceCd>
+            <userId>x228550</userId>
+            <requestDate>2020-04-01</requestDate>
+         </fiel:inputHeader>
+         <fiel:workOrderId>#WORK_ORDER_ID#</fiel:workOrderId>
+      </fiel:getWorkOrder>
+   </soapenv:Body>
+</soapenv:Envelope>

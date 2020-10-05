@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <Authentication xmlns="http://www.alarm.com/WebServices">
+      <User>#ALARM_USER#</User>
+      <Password>#ALARM_PASS#</Password>
+      <TwoFactorDeviceId>string</TwoFactorDeviceId>
+    </Authentication>
+  </soap:Header>
+  <soap:Body>
+    <CheckAvailableLoginName xmlns="http://www.alarm.com/WebServices">
+      <input>
+        <LoginName>#EMAIL_ID#</LoginName>
+        <FirstName>string</FirstName>
+        <LastName>string</LastName>
+        <Email>#EMAIL_ID#</Email>
+        <Phone>string</Phone>
+        <RetrieveLoginInfoOnCollision>true</RetrieveLoginInfoOnCollision>
+      </input>
+    </CheckAvailableLoginName>
+  </soap:Body>
+</soap:Envelope>

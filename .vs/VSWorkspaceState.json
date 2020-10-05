@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\utils",
+    "\\src\\utils\\telus-apis",
+    "\\test-data",
+    "\\_tests_",
+    "\\_tests_\\data-driven-dynamic-template-api-wait-till-unsettled",
+    "\\_tests_\\ui-tests",
+    "\\_tests_\\ui-tests\\home-security",
+    "\\_tests_\\ui-tests\\home-security\\shs-and-lw-test-scenarios"
+  ],
+  "SelectedNode": "\\_tests_\\ui-tests\\provide-home-security-1.test.js",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,468 @@
+{
+  "pagename": "SelectServicesPage",
+  "urlcontains": "select",
+  "elements": [
+    {
+      "identifier": "AllServicesAvailable",
+      "meta": {
+        "type": "h3",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".top-product__name .title .title__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SelectedServices",
+      "meta": {
+        "type": "h3",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.top-product._selected .title__text",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServiceCaption",
+      "meta": {
+        "type": "span#dynamic_data",
+        "id": "",
+        "xpath": "//span[@class='checkbox__label' and contains(text(),'#DYN_DATA#')]/ancestor::div[@class='top-product']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddInternetToMyBundle",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='checkbox__label' and text()='Add Internet to my bundle']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddTvToMyBundle",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='checkbox__label' and text()='Add TV to my bundle']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddPhoneToMyBundle",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='checkbox__label' and text()='Add Phone to my bundle']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddSecurityProductsToMyBundle",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='checkbox__label' and text()='Add Security Products to my bundle']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddLivingWellToMyBundle",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[@class='checkbox__label' and text()='Add LivingWell to my bundle']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CommitmentsCollection",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.commitment",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ChooseYourProductOfferingNamesCollection",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".product-offering-wrapper > .product-offering",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SelectYourProductOfferingButtonsCollection",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".product-offering-wrapper > .product-offering button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServiceProvider",
+      "meta": {
+        "type": "select",
+        "id": "",
+        "xpath": "//div[@class='offering-characteristic']//div[@class='ngx-select__selected']",
+        "className": "",
+        "css": ".offering-characteristic > .select-wrapper",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServiceProviderLov",
+      "meta": {
+        "type": "options",
+        "id": "",
+        "xpath": "//div[@class='offering-characteristic']//a[contains(@class,'ngx-select__item')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewMoreSecurityProducts",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//*[contains(text(),'Choose your Security Products')]/ancestor::div[@class='product-offerings__header']//span[text()='View More']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewMoreLivingWellProducts",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//*[contains(text(),'Choose your LivingWell')]/ancestor::div[@class='product-offerings__header']//span[text()='View More']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewMoreLivingWellProducts",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//*[contains(text(),'Choose your LivingWell')]/ancestor::div[@class='product-offerings__header']//span[text()='View More']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewLessCommitments",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[starts-with(@class,'commitments')]//span[text()='View Less']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewMoreOfferings",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[starts-with(@class,'product-offerings')]//span[text()='View More']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ViewLessOfferings",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[starts-with(@class,'product-offerings')]//span[text()='View Less']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProductTypeNamesCollection",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.product-type div.product-type__name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProductTypeSelectButtonsCollection",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.product-type div.product-type__controls button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProductOfferingsCategoryNamesCollection",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.product-offering-categories__items div.product-offering-category__title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ProductOfferingsPackageTitlesCollection",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.product-offering-vertical__title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "._next",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShoppingCartNextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".shoping-cart__button > app-button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SelectedServiceHS",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='commitment _selected _locked']//span[contains(@class,'checkbox__label')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SelectedPlanHS",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='product-offering__label _selected']/following-sibling::div",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CartPlan",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='quote__offer-name']",
+        "className": "",
+        "css": "div.quote__offer-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CartEquipment",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='quote__equipment-item']",
+        "className": "",
+        "css": "div.quote__equipment-item",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CartButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='shoping-cart__view-details']",
+        "className": "",
+        "css": "div.shoping-cart__view-details ",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServiceDropDown",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//div[@class='quote__product-name' and text()='$$TEXT$$']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CartProductPrice",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='quote__offer-price']",
+        "className": "",
+        "css": "div.quote__offer-price",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Spinner",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='spinner _spinning _fill-container']",
+        "className": "",
+        "css": "svg.spinner__svg",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShowMore",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//span[text()='Show More']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "StartDate",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@formcontrolname='date']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TermLength",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//button[@class='form__input']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TermLengthDropdown",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//li[@role='menuitem']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "HomeSecurityAmount",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//input[@class='form__input ng-untouched ng-pristine ng-valid']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmPrice",
+      "meta": {
+        "type": "input",
+        "id": "",
+        "xpath": "//button[@class='button _wide']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NotIntoCommitments",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='commitments__payment-plan-title']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CompleteOnServicePage",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//span[contains(text(),'Complete')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmDate",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@class='button']/span[text()='Confirm']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

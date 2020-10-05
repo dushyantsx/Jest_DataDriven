@@ -1,0 +1,204 @@
+{
+  "pagename": "ShippingDetailsPage",
+  "urlcontains": "shipping_details",
+  "elements": [
+    {
+      "identifier": "Title",
+      "meta": {
+        "type": "h2",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".wiz-shipping__header .wiz-caption__title",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoFirstName",
+      "meta": {
+        "type": "text",
+        "id": "first-name",
+        "xpath": "",
+        "className": "",
+        "css": "#first-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoLastName",
+      "meta": {
+        "type": "text",
+        "id": "last-name",
+        "xpath": "",
+        "className": "",
+        "css": "#last-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoContactPhone",
+      "meta": {
+        "type": "text",
+        "id": "phone",
+        "xpath": "",
+        "className": "",
+        "css": "#phone",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoSaveContact",
+      "meta": {
+        "type": "button",
+        "id": "shippingSaveContactButton",
+        "xpath": "",
+        "className": "",
+        "css": "#shippingSaveContactButton > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoCancelContact",
+      "meta": {
+        "type": "button",
+        "id": "shippingCancelContactButton",
+        "xpath": "",
+        "className": "",
+        "css": "#shippingCancelContactButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoStreetNumber",
+      "meta": {
+        "type": "text",
+        "id": "street-number",
+        "xpath": "",
+        "className": "",
+        "css": "#street-number",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoStreetName",
+      "meta": {
+        "type": "text",
+        "id": "street-name",
+        "xpath": "",
+        "className": "",
+        "css": "#street-name",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoAptUnitNumber",
+      "meta": {
+        "type": "text",
+        "id": "apt-number",
+        "xpath": "",
+        "className": "",
+        "css": "#apt-number",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoCity",
+      "meta": {
+        "type": "text",
+        "id": "city",
+        "xpath": "",
+        "className": "",
+        "css": "#city",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoProvince",
+      "meta": {
+        "type": "span",
+        "id": "province-button",
+        "xpath": "",
+        "className": "",
+        "css": "#province-button",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoPostalCode",
+      "meta": {
+        "type": "text",
+        "id": "postal-code",
+        "xpath": "",
+        "className": "",
+        "css": "#postal-code",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShipToThisAddress",
+      "meta": {
+        "type": "button",
+        "id": "shipButton",
+        "xpath": "",
+        "className": "",
+        "css": "#shipButton > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShipToThisAddressCancelButton",
+      "meta": {
+        "type": "link",
+        "id": "shippingCancelButton",
+        "xpath": "",
+        "className": "",
+        "css": "#shippingCancelButton",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ShippingInfoNextButton",
+      "meta": {
+        "type": "button",
+        "id": "next",
+        "xpath": "",
+        "className": "",
+        "css": ".jsNextButton > span",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "No",
+      "meta": {
+        "type": "Div",
+        "id": "",
+        "xpath": "//div[@data-value='no']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Yes",
+      "meta": {
+        "type": "Div",
+        "id": "",
+        "xpath": "//div[@data-value='yes']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "editlink",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[@class='wiz-shipping__info-block js_editable_address_section hidden']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}

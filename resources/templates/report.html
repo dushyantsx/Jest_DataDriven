@@ -1,0 +1,592 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Accordion */
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 98%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: #ccc;
+      }
+
+      .accordion:after {
+        content: "\002B";
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .active:after {
+        content: "\2212";
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+    </style>
+
+    <style>
+      /*Modal dialog styles*/
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+      }
+
+      /* 100% Image Width on Smaller Screens */
+      @media only screen and (max-width: 700px) {
+        .modal-content {
+          width: 100%;
+        }
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      @keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      /* The Close Button */
+      .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+      }
+
+      .modal-body {
+        padding: 2px 16px;
+        min-height: 100px;
+        max-height: 300px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+      }
+
+      .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+      }
+    </style>
+
+    <style>
+      /* Style the Image Used to Trigger the Modal */
+      .myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .myImg:hover {
+        opacity: 0.7;
+      }
+
+      /* Caption of Modal Image (Image Text) - Same Width as the Image */
+      #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      }
+
+      /* Add Animation - Zoom in the Modal */
+      .modal-content,
+      #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+
+    <style>
+      /* Tag styles */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 1px 1px grey;
+        letter-spacing: 2px;
+      }
+
+      /* Tag Styles */
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 2px;
+        text-align: left;
+      }
+
+      td {
+        height: 10px;
+        vertical-align: top;
+      }
+    </style>
+
+    <style>
+      /*Generic classes*/
+      .button,
+      .button-disabled {
+        /* float: left; */
+        border-radius: 8px;
+        width: 75%;
+        transition-duration: 0.4s;
+        color: black;
+        font-size: 12px;
+      }
+
+      .button {
+        background-color: #a9f1a9;
+      }
+
+      .button-disabled {
+        background-color: #a9afa9;
+      }
+
+      .button:hover,
+      .img:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+    </style>
+  </head>
+
+  <script>
+    var debugPrint = true;
+    var results = $ddResultData;
+    var finalResults = [];
+  </script>
+
+  <script>
+    function print(msg) {
+      if (debugPrint) {
+        console.log(msg);
+      }
+    }
+    function loadResults() {
+      if (Array.isArray(results) == false && results != null && results != undefined) {
+        finalResults.push(results);
+      } else {
+        finalResults = results;
+      }
+      print("finalResults length: " + finalResults.length);
+      let htmlContent = getReportHeaders();
+
+      for (let caseResultIndex = 0; caseResultIndex < finalResults.length; caseResultIndex++) {
+        let result = finalResults[caseResultIndex];
+
+        htmlContent += getTestCaseDiv(result.caseid, result.description);
+
+        htmlContent += "<div class='panel'><table style='width:100%;'>";
+        for (let resultDatasetIndex = 0; resultDatasetIndex < result.datasets.length; resultDatasetIndex++) {
+          let dResult = result.datasets[resultDatasetIndex];
+          htmlContent += getTestDataSetDiv(caseResultIndex, resultDatasetIndex);
+        }
+        htmlContent += "</table></div>";
+      }
+
+      document.getElementById("resultsDiv").innerHTML = htmlContent; //+ modalHtml;
+      applyAccordionStyles();
+    }
+
+    function getReportHeaders() {
+      let uiheader = "<div>";
+      uiheader += "<table style='width:100%;'><tr>";
+      uiheader += "<th>Test Case</th>";
+      uiheader += "<th colspan=2>Test Case Description</th>";
+      uiheader += "<th>Result</th>";
+      uiheader += "<th>Screenshot</th>";
+      uiheader += "</tr></table>";
+      uiheader += "</div>";
+
+      print("uiheader: " + uiheader);
+      return uiheader;
+    }
+
+    function getTestCaseDiv(caseid, description) {
+      let row =
+        "<div class='accordion'>" +
+        "<table style='width:100%;'>" +
+        "<tr>" +
+        "<td style='width:20%;'>" +
+        caseid +
+        "</td>" +
+        "<td colspan=2>" +
+        description +
+        "</td>" +
+        "<td></td>" +
+        "<td></td>" +
+        "</tr>" +
+        "</table>" +
+        "</div>";
+      print("row: " + row);
+      return row;
+    }
+
+    function getTestDataSetDiv(caseResultIndex, resultDatasetIndex) {
+      let rd =
+        "<tr><td style='width:15%;'>" +
+        "Data-set-id: " +
+        (resultDatasetIndex + 1) +
+        "</td><td style='width:20%;text-align:center;'>" +
+        getButtonTagToShowModalDataOnButtonClick(caseResultIndex, resultDatasetIndex, "request", "INPUT") +
+        "</td><td style='width:20%;text-align:center;'>" +
+        getButtonTagToShowModalDataOnButtonClick(caseResultIndex, resultDatasetIndex, "expected", "EXPECTED") +
+        "</td><td style='width:20%;text-align:center;'>" +
+        getButtonTagToShowModalDataOnButtonClick(caseResultIndex, resultDatasetIndex, "response", "OUTPUT") +
+        "</td><td>" +
+        getResultTag(caseResultIndex, resultDatasetIndex) +
+        "</td><td>" +
+        getDatasetScreenshotTag(caseResultIndex, resultDatasetIndex) +
+        "</td></tr>";
+      print("test-data-set-div: " + rd);
+      return rd;
+    }
+
+    function getResultTag(caseResultIndex, resultDatasetIndex) {
+      let result = getDataSetProperty(caseResultIndex, resultDatasetIndex, "result");
+      let endpoint = getDataSetProperty(caseResultIndex, resultDatasetIndex, "request.endpoint");
+      let er = getDataSetProperty(caseResultIndex, resultDatasetIndex, "error");
+
+      //console.log(endpoint);
+      if (endpoint == null || endpoint === undefined) endpoint = "";
+      let color = "blue";
+      switch (result) {
+        case "PASS":
+          color = "green";
+          break;
+        case "FAIL":
+          color = "red";
+          break;
+        case "IN PROGRESS":
+          color = "grey";
+          break;
+        case "UNKNOWN":
+          color = "yellow";
+          break;
+      }
+      let errJson = JSON.stringify(er);
+      let rt = "<span style='color:" + color + ";font-weight:bold' err='" + errJson + "'>" + result;
+      if (endpoint.length > 0) {
+        rt += " - " + endpoint;
+      }
+      rt += "</span>";
+      print("resultTag: " + rt);
+      return rt;
+    }
+
+    function getDatasetScreenshotTag(caseResultIndex, resultDatasetIndex) {
+      let result = getDataSetProperty(caseResultIndex, resultDatasetIndex, "screenshotLocation");
+      print("property img tag: " + result);
+      if (result == null || result === undefined || result.length == 0) {
+        return "";
+      }
+
+      let imgId = "myImg" + caseResultIndex + resultDatasetIndex;
+      let m = "showModalImg(" + caseResultIndex + "," + resultDatasetIndex + ",'" + imgId + "')";
+      print("onclick function for imgTag = " + m);
+      let resultFileName = getDataSetProperty(caseResultIndex, resultDatasetIndex, "screenshotName");
+      let er = getDataSetProperty(caseResultIndex, resultDatasetIndex, "error");
+
+      //       <!-- Trigger the Modal -->
+      // <img id="myImg" src="img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">
+
+      let rt =
+        "<img id='" +
+        imgId +
+        "' class='myImg' style='width:150;height:150;max-width:200px;' alt='" +
+        resultFileName +
+        "' src='" +
+        result +
+        "' onclick=" +
+        m +
+        " />";
+      print("imgTag: " + rt);
+      return rt;
+    }
+
+    function getButtonTagToShowModalDataOnButtonClick(
+      caseResultIndex,
+      resultDatasetIndex,
+      propertyNameToShowInResultModalText,
+      displayText
+    ) {
+      let m =
+        "showModal(" +
+        caseResultIndex +
+        "," +
+        resultDatasetIndex +
+        "," +
+        "'" +
+        propertyNameToShowInResultModalText +
+        "'" +
+        ")";
+      let resultText = getDataSetProperty(caseResultIndex, resultDatasetIndex, propertyNameToShowInResultModalText);
+      print("resultText: " + resultText);
+      let isDataEmpty =
+        resultText == null || resultText === undefined || JSON.stringify(resultText) === JSON.stringify({});
+      if (isDataEmpty) {
+        switch (propertyNameToShowInResultModalText) {
+          case "request":
+            displayText = "NO INPUT";
+            break;
+          case "response":
+            displayText = "NO OUTPUT RECEIVED";
+            break;
+          case "expected":
+            displayText = "NO EXPECTED OUTPUT SPECIFIED";
+            break;
+        }
+        t = "<button class='button-disabled' disabled>" + displayText + "</button>";
+      } else {
+        t = "<button class='button' onclick=" + m + ">" + displayText + "</button>";
+      }
+      print("buttonTagToShowModalData:" + t);
+      return t;
+    }
+
+    function getDataSetProperty(caseResultIndex, resultDatasetIndex, propertyToGet) {
+      let caseResult = finalResults[caseResultIndex];
+      let resultNode = caseResult.datasets[resultDatasetIndex];
+
+      let properties = propertyToGet.split(".");
+      for (let index = 0; index < properties.length - 1; index++) {
+        resultNode = resultNode[properties[index]];
+      }
+
+      let propertyVal = resultNode[properties[properties.length - 1]];
+      return propertyVal;
+    }
+
+    function applyAccordionStyles() {
+      let acc = document.getElementsByClassName("accordion");
+
+      for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    }
+
+    window.onload = function () {
+      loadResults();
+    };
+  </script>
+
+  <script>
+    /** Modal Dialog Code **/
+    function showModal(caseResultIndex, resultDatasetIndex, propertyNameToShowInResultModalText) {
+      let data = document.getElementById("modalTextId");
+
+      let resultText = getDataSetProperty(caseResultIndex, resultDatasetIndex, propertyNameToShowInResultModalText);
+
+      data.innerHTML = "<pre>" + JSON.stringify(resultText, undefined, 4) + "</pre>";
+
+      let modal = document.getElementById("myModal");
+      // When the user clicks the button, open the modal
+      modal.style.display = "block";
+
+      // Get the <h2> element that shows the modal dialog heading
+      let heading = document.getElementById("modalHeadingText");
+      let headingText = "Dataset Detailed Result";
+      switch (propertyNameToShowInResultModalText) {
+        case "request":
+          headingText += " - Request Input";
+          break;
+        case "response":
+          headingText += " - Response Output";
+          break;
+        case "expected":
+          headingText += " - Expected Output";
+          break;
+      }
+      // Change heading text
+      heading.innerText = headingText;
+
+      // Get the <span> element that closes the modal
+      let span = document.getElementsByClassName("close")[0];
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+    }
+
+    function showModalImg(caseResultIndex, resultDatasetIndex, imgElementId) {
+      print(
+        "caseResultIndex: " +
+          caseResultIndex +
+          "; resultDsIndex: " +
+          resultDatasetIndex +
+          "; imgElement: " +
+          imgElementId
+      );
+      // Get the modal
+      let modal = document.getElementById("myModalImg");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById(imgElementId);
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      };
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      // Get the modal
+      let modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+
+      // Get the modal
+      let modalImg = document.getElementById("myModalImg");
+      if (event.target == modalImg) {
+        modalImg.style.display = "none";
+      }
+    };
+    /** Modal Dialog Code **/
+  </script>
+  <body>
+    <div id="resultsDiv" style="overflow-x: auto;"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2 id="modalHeadingText">Dataset Detailed Result</h2>
+        </div>
+        <div class="modal-body">
+          <p id="modalTextId">$dataToShowInModalDialog</p>
+        </div>
+        <div class="modal-footer">
+          <h3></h3>
+        </div>
+      </div>
+      <!-- Modal content -->
+    </div>
+    <!-- The Modal -->
+
+    <!-- The Modal Image -->
+    <div id="myModalImg" class="modal">
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01" />
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
+  </body>
+</html>

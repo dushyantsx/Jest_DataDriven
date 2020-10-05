@@ -1,0 +1,83 @@
+{
+  "pagename": "Netcracker",
+  "urlcontains": "search",
+  "elements": [
+    {
+      "identifier": "NameSearchField",
+      "meta": {
+        "type": "input",
+        "id": "sv_vname",
+        "xpath": "//div[@class='criterionInput']//input[@name='_vname']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SearchButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='buttonOuter']/div[@class='buttonInner']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NameCheckbox",
+      "meta": {
+        "type": "checkbox",
+        "id": "",
+        "xpath": "//th[@class=' firstCheckbox']//input",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DeleteButton",
+      "meta": {
+        "type": "Delete",
+        "id": "",
+        "xpath": "//td[@class='withoutBorder']/a[contains(text(),'Delete')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "UserName",
+      "meta": {
+        "type": "text",
+        "id": "username",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Password",
+      "meta": {
+        "type": "password",
+        "id": "password",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "LoginButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "button.button.button--primary",
+        "linkText": ""
+      }
+    }
+  ]
+}

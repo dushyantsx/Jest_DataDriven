@@ -1,0 +1,127 @@
+{
+    "pagename": "EmergencyContact",
+    "urlcontains": "emergency_contact",
+    "elements": [
+        {
+            "identifier": "SitePhoneNumber",
+            "meta": {
+                "type": "input",
+                "id": "",
+                "xpath": "//input[@name='sitePhoneNumber']",
+                "className": "",
+                "css": "input[name='sitePhoneNumber']",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "Save",
+            "meta": {
+                "type": "button",
+                "id": "",
+                "xpath": "//span[contains(text(),'Save')]",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "PhoneNumber",
+            "meta": {
+                "type": "input",
+                "id": "",
+                "xpath": "//input[@name='phoneNumber']",
+                "className": "",
+                "css": "input[name='phoneNumber']",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "ContactType",
+            "meta": {
+                "type": "dropdown",
+                "id": "",
+                "xpath": "//div[contains(text(),'Contact Type')]/following-sibling::div",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "PhoneNumberType",
+            "meta": {
+                "type": "dropdown",
+                "id": "",
+                "xpath": "//div[contains(text(),'Phone Number Type')]/following-sibling::div",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "Password",
+            "meta": {
+                "type": "input",
+                "id": "",
+                "xpath": "//input[@name='password']",
+                "className": "",
+                "css": "input[name='password']",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "AddContact",
+            "meta": {
+                "type": "button",
+                "id": "",
+                "xpath": "//span[contains(text(),'Add Contact')]",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "SavedContact",
+            "meta": {
+                "type": "container",
+                "id": "",
+                "xpath": "//div[@class='_contact-name']",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "Next",
+            "meta": {
+                "type": "button",
+                "id": "",
+                "xpath": "//button[@class='button _wider _next']",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "ContactList",
+            "meta": {
+                "type": "dropdown",
+                "id": "",
+                "xpath": "//li[contains(@role,'menuitem')]/a",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        },
+        {
+            "identifier": "PhoneTypeList",
+            "meta": {
+                "type": "dropdown",
+                "id": "",
+                "xpath": "//ul[@class='dropdown-menu app-custom-select__dropdown show ps']//li[contains(@role,'menuitem')]/a",
+                "className": "",
+                "css": "",
+                "linkText": ""
+            }
+        }
+    ]
+}

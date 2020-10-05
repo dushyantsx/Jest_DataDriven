@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "663fe06a-0606-4f79-9d25-0f3c01f09f5e",
+		"name": "WFM_GetWorkOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetWorkOrderInfo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "NETCRACKER",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "soaorgid",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					},
+					{
+						"key": "soapAction",
+						"type": "text",
+						"value": "getWorkOrder"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:fiel=\"http://xmlschema.tmi.telus.com/srv/RMO/ProcessMgmt/FieldWorkAssignmentMgmtServiceRequestResponse_v3\">\r\n   <soapenv:Header />\r\n   <soapenv:Body>\r\n      <fiel:getWorkOrder>\r\n         <fiel:inputHeader>\r\n            <systemSourceCd>7820</systemSourceCd>\r\n            <userId>T835630</userId>\r\n            <requestDate>2016-04-01</requestDate>\r\n         </fiel:inputHeader>\r\n         <fiel:workOrderId>100027607158</fiel:workOrderId>\r\n      </fiel:getWorkOrder>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://soa-mp-rmsk-is02.tsl.telus.com/RMO/ProcessMgmt/FieldWorkAssignmentMgmtService_v3_0_vs0",
+					"protocol": "https",
+					"host": [
+						"soa-mp-rmsk-is02",
+						"tsl",
+						"telus",
+						"com"
+					],
+					"path": [
+						"RMO",
+						"ProcessMgmt",
+						"FieldWorkAssignmentMgmtService_v3_0_vs0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

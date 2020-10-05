@@ -1,0 +1,52 @@
+{
+  "pagename": "Customize",
+  "urlcontains": "customize",
+  "elements": [
+    {
+      "identifier": "Feature",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": "div.feature",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NextButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[@class='button _wider _next']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "TVNextButton",
+      "meta": {
+        "type": "next",
+        "id": "next",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "PhoneOptions",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='$$TEXT$$']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}
+
+

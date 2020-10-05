@@ -1,0 +1,413 @@
+{
+  "pagename": "ManageServicesPage",
+  "urlcontains": "manage-service-status",
+  "elements": [
+    {
+      "identifier": "CheckServicebox",
+      "meta": {
+        "type": "checkbox",
+        "id": "",
+        "xpath": "//span[contains(text(),'$$TEXT$$')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AvailableServices",
+      "meta": {
+        "type": "checkbox",
+        "id": "",
+        "xpath": "//span[@class='manage-services__checkbox-label']",
+        "className": "",
+        "css": ".manage-services__cell._name .manage-services__checkbox-label",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Cease",
+      "meta": {
+        "type": "link",
+        "id": "",
+        "xpath": "//a[@class='link js-manage-services-action js-manage-services-cease _underline']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "SelectDropdown",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//span[@class='ui-selectmenu-text']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CeaseList",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//li[@class='ui-menu-item']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmReason",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[contains(.,'Confirm reason')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Immediate",
+      "meta": {
+        "type": "radiobutton",
+        "id": "",
+        "xpath": "//span[contains(text(),'Immediate')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmStatus",
+      "meta": {
+        "type": "radiobutton",
+        "id": "",
+        "xpath": "//button[@class='js-confirmServicesStatus button color-green button-width-tds']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ManageServicesLink",
+      "meta": {
+        "type": "",
+        "id": "",
+        "xpath": "//li[@id='tabItem']/a[contains(text(),'Manage Service Status')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "FutureDate",
+      "meta": {
+        "type": "radiobutton",
+        "id": "",
+        "xpath": "//span[contains(text(),'Future date')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Calender",
+      "meta": {
+        "type": "textfield",
+        "id": "",
+        "xpath": "//img[@class='ui-datepicker-trigger']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CeaseTime",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//div[@class='form-text__field js-out-of-service-indication-wrap']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CeaseTimeList",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//ul[@id='outOfServiceIndication-menu']/li",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "DateToSelect",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//a[contains(text(),'30')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MoveButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[contains(text(),'Move Services')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "NewAddress",
+      "meta": {
+        "type": "radio",
+        "id": "",
+        "xpath": "//label[@class='wiz-radio']//span[contains(text(), 'New address')]/preceding-sibling::i",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MoveToCity",
+      "meta": {
+        "type": "textfield",
+        "id": "",
+        "xpath": "//div[@class='form-text__field ui-front']/input[@id='city']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MoveToCityLov",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//div[@class='form-text__field ui-front']/input[@id='city']/following-sibling::ul/li[starts-with(@class,'suggest__item')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MoveToAddress",
+      "meta": {
+        "type": "textfield",
+        "id": "",
+        "xpath": "//div[@class='form-text']//input[@id='address']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MoveToAddressLov",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//input[@id='address']//following-sibling::ul//a[@class='suggest__link']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "MoveToProvince",
+      "meta": {
+        "type": "dropdown",
+        "id": "",
+        "xpath": "//div[@class='check-availability__form-item _province _move']//div[@class='form-text__field']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Next",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='check-availability__form-button _move-services js-check-availability-move-form-button']/button",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Equipment",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='service__offers-item' and contains(text(),'$$TEXT$$')]//following::button[@id='intSerEquipment']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Change",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//div[@class='service__offers-item' and contains(text(),'$$TEXT$$')]//following::button[@id='intSerChange']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "City",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//input[@id='city']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Citylov",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//a[contains(text(),'$$TEXT$$')]",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Address",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//input[@id='address']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "AddAddressButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[text()='Add address']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServiceCheckbox",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[@class='manage-services__checkbox _green _global js-partial-cancel-checkbox']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CancelRequestLink",
+      "meta": {
+        "type": "a",
+        "id": "",
+        "xpath": "//a[@class='link js-manage-services-action js-cancel-request-product']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CancellationReasonDropdown",
+      "meta": {
+        "type": "a",
+        "id": "",
+        "xpath": "//span[@class='ui-selectmenu-button ui-widget ui-state-default ui-corner-all']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "CancellationReasonDropdownlist",
+      "meta": {
+        "type": "a",
+        "id": "",
+        "xpath": "//li[@class='ui-menu-item']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmCancellationButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//button[text()='Confirm reason']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ConfirmButton",
+      "meta": {
+        "type": "button",
+        "id": "",
+        "xpath": "//span[text()='Confirm']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "RemoveEquipment",
+      "meta": {
+        "type": "span",
+        "id": "",
+        "xpath": "//div[text()='Indoor Camera TELUS Easy Pay B2C']/../..//a[@class='link js-equipment-remove']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "ServiceDetailsExpander",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "//div[text()='Control Plus Video']/../..//div[@class='service__expander iconCaretDown jsToggleService']",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "EquipmentDetailsLink",
+      "meta": {
+        "type": "div",
+        "id": "",
+        "xpath": "",
+        "className": "",
+        "css": ".service-feature__details",
+        "linkText": ""
+      }
+    }
+  ]
+}

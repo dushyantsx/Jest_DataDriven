@@ -1,0 +1,28 @@
+{
+  "pagename": "PAGE-NAME",
+  "urlcontains": "PAGE-TITLE1|PAGE-TITLE2",
+  "elements": [
+    {
+      "identifier": "UserName",
+      "meta": {
+        "type": "",
+        "id": "uname",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    },
+    {
+      "identifier": "Password",
+      "meta": {
+        "type": "",
+        "id": "pwd",
+        "xpath": "",
+        "className": "",
+        "css": "",
+        "linkText": ""
+      }
+    }
+  ]
+}
